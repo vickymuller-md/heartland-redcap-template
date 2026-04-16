@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+title: HEARTLAND Protocol REDCap Instrument Template
+message: >-
+  If you use this template, please cite both the template
+  (this repository) and the underlying HEARTLAND Protocol
+  v3.3 (Cureus 2026; DOI 10.5281/zenodo.18566403).
+type: dataset
+authors:
+  - family-names: Ferreira
+    given-names: Vicky Muller
+    orcid: "https://orcid.org/0009-0009-1099-5690"
+    email: vickymuller@heartlandprotocol.org
+repository-code: "https://github.com/vickymuller-md/heartland-redcap-template"
+url: "https://github.com/vickymuller-md/heartland-redcap-template"
+abstract: >-
+  Pre-built REDCap data dictionary (CSV + ODM XML) for the
+  HEARTLAND Protocol v3.3. 75 fields across 5 forms covering
+  enrollment, baseline (10 weighted risk variables with 0-18
+  point score), GDMT status, monthly follow-up (repeating
+  x12), and 12-month outcomes. Includes synthetic sample
+  data, codebook PDF, import guide, and reference validation
+  study protocol (n=150).
+keywords:
+  - heart failure
+  - REDCap
+  - rural health
+  - GDMT
+  - risk stratification
+  - HEARTLAND Protocol
+license: MIT
+version: 1.0.0
+date-released: "2026-04-16"

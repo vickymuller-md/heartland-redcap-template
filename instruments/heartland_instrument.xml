@@ -1,0 +1,1215 @@
+<?xml version="1.0" ?>
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:redcap="https://projectredcap.org" FileType="Snapshot" FileOID="heartland_redcap_template_v1" Granularity="Metadata" CreationDateTime="2026-04-16T00:00:00" SourceSystem="HEARTLAND REDCap template generator" ODMVersion="1.3.2">
+  <Study OID="heartland_study">
+    <GlobalVariables>
+      <StudyName>HEARTLAND Protocol REDCap Template</StudyName>
+      <StudyDescription>Pre-built REDCap instrument for HEARTLAND Protocol v3.3 data collection.</StudyDescription>
+      <ProtocolName>HEARTLAND v3.3</ProtocolName>
+    </GlobalVariables>
+    <MetaDataVersion OID="Metadata.1" Name="HEARTLAND v1.0.0">
+      <Protocol>
+        <StudyEventRef StudyEventOID="Event.enrollment" Mandatory="Yes" OrderNumber="1"/>
+        <StudyEventRef StudyEventOID="Event.baseline" Mandatory="Yes" OrderNumber="2"/>
+        <StudyEventRef StudyEventOID="Event.gdmt_status" Mandatory="Yes" OrderNumber="3"/>
+        <StudyEventRef StudyEventOID="Event.monthly_followup" Mandatory="Yes" OrderNumber="4"/>
+        <StudyEventRef StudyEventOID="Event.outcomes_12mo" Mandatory="Yes" OrderNumber="5"/>
+      </Protocol>
+      <StudyEventDef OID="Event.enrollment" Name="enrollment" Repeating="No" Type="Common">
+        <FormRef FormOID="Form.enrollment" Mandatory="Yes"/>
+      </StudyEventDef>
+      <StudyEventDef OID="Event.baseline" Name="baseline" Repeating="No" Type="Common">
+        <FormRef FormOID="Form.baseline" Mandatory="Yes"/>
+      </StudyEventDef>
+      <StudyEventDef OID="Event.gdmt_status" Name="gdmt_status" Repeating="No" Type="Common">
+        <FormRef FormOID="Form.gdmt_status" Mandatory="Yes"/>
+      </StudyEventDef>
+      <StudyEventDef OID="Event.monthly_followup" Name="monthly_followup" Repeating="Yes" Type="Common">
+        <FormRef FormOID="Form.monthly_followup" Mandatory="Yes"/>
+      </StudyEventDef>
+      <StudyEventDef OID="Event.outcomes_12mo" Name="outcomes_12mo" Repeating="No" Type="Common">
+        <FormRef FormOID="Form.outcomes_12mo" Mandatory="Yes"/>
+      </StudyEventDef>
+      <FormDef OID="Form.enrollment" Name="enrollment" Repeating="No">
+        <ItemGroupRef ItemGroupOID="ItemGroup.enrollment" Mandatory="Yes" OrderNumber="1"/>
+      </FormDef>
+      <ItemGroupDef OID="ItemGroup.enrollment" Name="enrollment" Repeating="No">
+        <ItemRef ItemOID="Item.record_id" Mandatory="No" OrderNumber="1"/>
+        <ItemRef ItemOID="Item.enr_date" Mandatory="Yes" OrderNumber="2"/>
+        <ItemRef ItemOID="Item.consent_date" Mandatory="Yes" OrderNumber="3"/>
+        <ItemRef ItemOID="Item.facility_name" Mandatory="Yes" OrderNumber="4"/>
+        <ItemRef ItemOID="Item.facility_cah" Mandatory="Yes" OrderNumber="5"/>
+        <ItemRef ItemOID="Item.facility_tier" Mandatory="Yes" OrderNumber="6"/>
+        <ItemRef ItemOID="Item.state" Mandatory="Yes" OrderNumber="7"/>
+        <ItemRef ItemOID="Item.county_fips" Mandatory="No" OrderNumber="8"/>
+        <ItemRef ItemOID="Item.rural_urban" Mandatory="No" OrderNumber="9"/>
+        <ItemRef ItemOID="Item.age" Mandatory="Yes" OrderNumber="10"/>
+        <ItemRef ItemOID="Item.sex" Mandatory="Yes" OrderNumber="11"/>
+        <ItemRef ItemOID="Item.race" Mandatory="No" OrderNumber="12"/>
+        <ItemRef ItemOID="Item.ethnicity" Mandatory="No" OrderNumber="13"/>
+      </ItemGroupDef>
+      <FormDef OID="Form.baseline" Name="baseline" Repeating="No">
+        <ItemGroupRef ItemGroupOID="ItemGroup.baseline" Mandatory="Yes" OrderNumber="1"/>
+      </FormDef>
+      <ItemGroupDef OID="ItemGroup.baseline" Name="baseline" Repeating="No">
+        <ItemRef ItemOID="Item.bl_prior_hf_hosp_6mo" Mandatory="Yes" OrderNumber="1"/>
+        <ItemRef ItemOID="Item.bl_lvef_pct" Mandatory="Yes" OrderNumber="2"/>
+        <ItemRef ItemOID="Item.bl_lvef_category" Mandatory="Yes" OrderNumber="3"/>
+        <ItemRef ItemOID="Item.bl_egfr" Mandatory="Yes" OrderNumber="4"/>
+        <ItemRef ItemOID="Item.bl_np_type" Mandatory="No" OrderNumber="5"/>
+        <ItemRef ItemOID="Item.bl_np_value" Mandatory="No" OrderNumber="6"/>
+        <ItemRef ItemOID="Item.bl_sbp_admit" Mandatory="Yes" OrderNumber="7"/>
+        <ItemRef ItemOID="Item.bl_diabetes" Mandatory="Yes" OrderNumber="8"/>
+        <ItemRef ItemOID="Item.bl_ckm_stage" Mandatory="Yes" OrderNumber="9"/>
+        <ItemRef ItemOID="Item.bl_distance_cardio_mi" Mandatory="Yes" OrderNumber="10"/>
+        <ItemRef ItemOID="Item.bl_social_support_limited" Mandatory="Yes" OrderNumber="11"/>
+        <ItemRef ItemOID="Item.bl_enrichd_score" Mandatory="No" OrderNumber="12"/>
+        <ItemRef ItemOID="Item.bl_risk_score" Mandatory="No" OrderNumber="13"/>
+        <ItemRef ItemOID="Item.bl_risk_tier" Mandatory="No" OrderNumber="14"/>
+        <ItemRef ItemOID="Item.bl_pro_consent" Mandatory="Yes" OrderNumber="15"/>
+      </ItemGroupDef>
+      <FormDef OID="Form.gdmt_status" Name="gdmt_status" Repeating="No">
+        <ItemGroupRef ItemGroupOID="ItemGroup.gdmt_status" Mandatory="Yes" OrderNumber="1"/>
+      </FormDef>
+      <ItemGroupDef OID="ItemGroup.gdmt_status" Name="gdmt_status" Repeating="No">
+        <ItemRef ItemOID="Item.gdmt_arni_acei_arb_drug" Mandatory="No" OrderNumber="1"/>
+        <ItemRef ItemOID="Item.gdmt_arni_acei_arb_dose" Mandatory="No" OrderNumber="2"/>
+        <ItemRef ItemOID="Item.gdmt_arni_acei_arb_target" Mandatory="No" OrderNumber="3"/>
+        <ItemRef ItemOID="Item.gdmt_arni_acei_arb_start" Mandatory="No" OrderNumber="4"/>
+        <ItemRef ItemOID="Item.gdmt_bb_drug" Mandatory="No" OrderNumber="5"/>
+        <ItemRef ItemOID="Item.gdmt_bb_dose" Mandatory="No" OrderNumber="6"/>
+        <ItemRef ItemOID="Item.gdmt_bb_target" Mandatory="No" OrderNumber="7"/>
+        <ItemRef ItemOID="Item.gdmt_bb_start" Mandatory="No" OrderNumber="8"/>
+        <ItemRef ItemOID="Item.gdmt_mra_drug" Mandatory="No" OrderNumber="9"/>
+        <ItemRef ItemOID="Item.gdmt_mra_dose" Mandatory="No" OrderNumber="10"/>
+        <ItemRef ItemOID="Item.gdmt_mra_target" Mandatory="No" OrderNumber="11"/>
+        <ItemRef ItemOID="Item.gdmt_mra_start" Mandatory="No" OrderNumber="12"/>
+        <ItemRef ItemOID="Item.gdmt_sglt2_drug" Mandatory="No" OrderNumber="13"/>
+        <ItemRef ItemOID="Item.gdmt_sglt2_dose" Mandatory="No" OrderNumber="14"/>
+        <ItemRef ItemOID="Item.gdmt_sglt2_start" Mandatory="No" OrderNumber="15"/>
+        <ItemRef ItemOID="Item.gdmt_hfpef_glp1" Mandatory="No" OrderNumber="16"/>
+        <ItemRef ItemOID="Item.gdmt_classes_count" Mandatory="No" OrderNumber="17"/>
+        <ItemRef ItemOID="Item.gdmt_generic_bridge" Mandatory="No" OrderNumber="18"/>
+        <ItemRef ItemOID="Item.gdmt_init_tier" Mandatory="No" OrderNumber="19"/>
+      </ItemGroupDef>
+      <FormDef OID="Form.monthly_followup" Name="monthly_followup" Repeating="Yes">
+        <ItemGroupRef ItemGroupOID="ItemGroup.monthly_followup" Mandatory="Yes" OrderNumber="1"/>
+      </FormDef>
+      <ItemGroupDef OID="ItemGroup.monthly_followup" Name="monthly_followup" Repeating="No">
+        <ItemRef ItemOID="Item.mo_event_number" Mandatory="Yes" OrderNumber="1"/>
+        <ItemRef ItemOID="Item.mo_date" Mandatory="Yes" OrderNumber="2"/>
+        <ItemRef ItemOID="Item.mo_track" Mandatory="Yes" OrderNumber="3"/>
+        <ItemRef ItemOID="Item.mo_weight_lb" Mandatory="No" OrderNumber="4"/>
+        <ItemRef ItemOID="Item.mo_sbp" Mandatory="No" OrderNumber="5"/>
+        <ItemRef ItemOID="Item.mo_dbp" Mandatory="No" OrderNumber="6"/>
+        <ItemRef ItemOID="Item.mo_hr" Mandatory="No" OrderNumber="7"/>
+        <ItemRef ItemOID="Item.mo_spo2" Mandatory="No" OrderNumber="8"/>
+        <ItemRef ItemOID="Item.mo_egfr" Mandatory="No" OrderNumber="9"/>
+        <ItemRef ItemOID="Item.mo_k" Mandatory="No" OrderNumber="10"/>
+        <ItemRef ItemOID="Item.mo_bnp" Mandatory="No" OrderNumber="11"/>
+        <ItemRef ItemOID="Item.mo_gdmt_change" Mandatory="No" OrderNumber="12"/>
+        <ItemRef ItemOID="Item.mo_gdmt_change_notes" Mandatory="No" OrderNumber="13"/>
+        <ItemRef ItemOID="Item.mo_red_flag_count" Mandatory="No" OrderNumber="14"/>
+        <ItemRef ItemOID="Item.mo_red_flag_types" Mandatory="No" OrderNumber="15"/>
+        <ItemRef ItemOID="Item.mo_hosp_any" Mandatory="No" OrderNumber="16"/>
+        <ItemRef ItemOID="Item.mo_hosp_hf" Mandatory="No" OrderNumber="17"/>
+        <ItemRef ItemOID="Item.mo_ed_any" Mandatory="No" OrderNumber="18"/>
+        <ItemRef ItemOID="Item.mo_ed_hf" Mandatory="No" OrderNumber="19"/>
+        <ItemRef ItemOID="Item.mo_kccq12_score" Mandatory="No" OrderNumber="20"/>
+      </ItemGroupDef>
+      <FormDef OID="Form.outcomes_12mo" Name="outcomes_12mo" Repeating="No">
+        <ItemGroupRef ItemGroupOID="ItemGroup.outcomes_12mo" Mandatory="Yes" OrderNumber="1"/>
+      </FormDef>
+      <ItemGroupDef OID="ItemGroup.outcomes_12mo" Name="outcomes_12mo" Repeating="No">
+        <ItemRef ItemOID="Item.out_vital_status" Mandatory="Yes" OrderNumber="1"/>
+        <ItemRef ItemOID="Item.out_death_date" Mandatory="No" OrderNumber="2"/>
+        <ItemRef ItemOID="Item.out_death_cardiovascular" Mandatory="No" OrderNumber="3"/>
+        <ItemRef ItemOID="Item.out_hf_hosp_count" Mandatory="Yes" OrderNumber="4"/>
+        <ItemRef ItemOID="Item.out_hf_ed_count" Mandatory="Yes" OrderNumber="5"/>
+        <ItemRef ItemOID="Item.out_days_alive_oh" Mandatory="Yes" OrderNumber="6"/>
+        <ItemRef ItemOID="Item.out_gdmt_optimized" Mandatory="No" OrderNumber="7"/>
+        <ItemRef ItemOID="Item.out_kccq12_12mo" Mandatory="No" OrderNumber="8"/>
+      </ItemGroupDef>
+      <ItemDef OID="Item.record_id" Name="record_id" DataType="text">
+        <Question>
+          <TranslatedText xml:lang="en">Record ID</TranslatedText>
+        </Question>
+        <redcap:FieldNote>REDCap auto-assigns on import</redcap:FieldNote>
+        <redcap:FormName>enrollment</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.enr_date" Name="enr_date" DataType="date">
+        <Question>
+          <TranslatedText xml:lang="en">Enrollment date</TranslatedText>
+        </Question>
+        <redcap:SectionHeader>Enrollment information</redcap:SectionHeader>
+        <redcap:FormName>enrollment</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.consent_date" Name="consent_date" DataType="date">
+        <Question>
+          <TranslatedText xml:lang="en">Informed consent date</TranslatedText>
+        </Question>
+        <redcap:FormName>enrollment</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.facility_name" Name="facility_name" DataType="text">
+        <Question>
+          <TranslatedText xml:lang="en">Facility name</TranslatedText>
+        </Question>
+        <redcap:FormName>enrollment</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.facility_cah" Name="facility_cah" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Critical Access Hospital (CAH)?</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.yesno"/>
+        <redcap:FieldNote>Federal CAH designation</redcap:FieldNote>
+        <redcap:FormName>enrollment</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.facility_tier" Name="facility_tier" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">HEARTLAND implementation tier</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.facility_tier"/>
+        <redcap:FieldNote>Per Protocol Table 2</redcap:FieldNote>
+        <redcap:FormName>enrollment</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.state" Name="state" DataType="text">
+        <Question>
+          <TranslatedText xml:lang="en">US state (2-letter)</TranslatedText>
+        </Question>
+        <redcap:FormName>enrollment</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.county_fips" Name="county_fips" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">County FIPS code (5-digit)</TranslatedText>
+        </Question>
+        <redcap:FormName>enrollment</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.rural_urban" Name="rural_urban" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">USDA RUCA classification</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.rural_urban"/>
+        <redcap:FormName>enrollment</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.age" Name="age" DataType="integer" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">Age (years)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>18</CheckValue>
+        </RangeCheck>
+        <redcap:SectionHeader>Patient demographics</redcap:SectionHeader>
+        <redcap:FormName>enrollment</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.sex" Name="sex" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Sex</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.sex"/>
+        <redcap:FormName>enrollment</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.race" Name="race" DataType="boolean">
+        <Question>
+          <TranslatedText xml:lang="en">Race (check all that apply)</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.race"/>
+        <redcap:FormName>enrollment</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.ethnicity" Name="ethnicity" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Ethnicity</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.ethnicity"/>
+        <redcap:FormName>enrollment</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.bl_prior_hf_hosp_6mo" Name="bl_prior_hf_hosp_6mo" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Prior HF hospitalization within 6 months</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.yesno"/>
+        <redcap:SectionHeader>HEARTLAND Risk Variables (Protocol v3.3 Table 1)</redcap:SectionHeader>
+        <redcap:FieldNote>+3 points if Yes</redcap:FieldNote>
+        <redcap:FormName>baseline</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.bl_lvef_pct" Name="bl_lvef_pct" DataType="integer" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">LVEF (%)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>10</CheckValue>
+        </RangeCheck>
+        <redcap:FieldNote>+2 points if &lt;30</redcap:FieldNote>
+        <redcap:FormName>baseline</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.bl_lvef_category" Name="bl_lvef_category" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">LVEF category</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.bl_lvef_category"/>
+        <redcap:FieldNote>Assign per current echo</redcap:FieldNote>
+        <redcap:FormName>baseline</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.bl_egfr" Name="bl_egfr" DataType="float" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">eGFR (mL/min/1.73m^2)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>5</CheckValue>
+        </RangeCheck>
+        <redcap:FieldNote>+2 points if &lt;45</redcap:FieldNote>
+        <redcap:FormName>baseline</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.bl_np_type" Name="bl_np_type" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Natriuretic peptide assay used</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.bl_np_type"/>
+        <redcap:FormName>baseline</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.bl_np_value" Name="bl_np_value" DataType="float" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">Natriuretic peptide value (pg/mL)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>0</CheckValue>
+        </RangeCheck>
+        <redcap:BranchingLogic>[bl_np_type] = "1" or [bl_np_type] = "2"</redcap:BranchingLogic>
+        <redcap:FieldNote>+2 if BNP &gt;=500 or NT-proBNP &gt;=1500</redcap:FieldNote>
+        <redcap:FormName>baseline</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.bl_sbp_admit" Name="bl_sbp_admit" DataType="integer" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">Admission systolic BP (mmHg)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>60</CheckValue>
+        </RangeCheck>
+        <redcap:FieldNote>+2 points if &lt;100</redcap:FieldNote>
+        <redcap:FormName>baseline</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.bl_diabetes" Name="bl_diabetes" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Diabetes mellitus</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.yesno"/>
+        <redcap:FieldNote>+1 point if Yes</redcap:FieldNote>
+        <redcap:FormName>baseline</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.bl_ckm_stage" Name="bl_ckm_stage" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">CKM syndrome stage (AHA 2023)</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.bl_ckm_stage"/>
+        <redcap:FieldNote>+2 points if Stage 3 or 4</redcap:FieldNote>
+        <redcap:FormName>baseline</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.bl_distance_cardio_mi" Name="bl_distance_cardio_mi" DataType="integer" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">Distance to nearest cardiologist (miles)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>0</CheckValue>
+        </RangeCheck>
+        <redcap:FieldNote>+1 point if &gt;50</redcap:FieldNote>
+        <redcap:FormName>baseline</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.bl_social_support_limited" Name="bl_social_support_limited" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Lives alone OR limited social support</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.yesno"/>
+        <redcap:FieldNote>+1 point if Yes (single-item proxy for ENRICHD)</redcap:FieldNote>
+        <redcap:FormName>baseline</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.bl_enrichd_score" Name="bl_enrichd_score" DataType="integer" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">ENRICHD Social Support Scale total (optional)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>7</CheckValue>
+        </RangeCheck>
+        <redcap:FieldNote>7-35; &lt;=19 suggests limited support</redcap:FieldNote>
+        <redcap:FormName>baseline</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.bl_risk_score" Name="bl_risk_score" DataType="float">
+        <Question>
+          <TranslatedText xml:lang="en">HEARTLAND risk score (0-18)</TranslatedText>
+        </Question>
+        <redcap:Calculation>if([age]&gt;=75,2,0) + if([bl_prior_hf_hosp_6mo]="1",3,0) + if([bl_egfr]&lt;45,2,0) + if(([bl_np_type]="1" and [bl_np_value]&gt;=500) or ([bl_np_type]="2" and [bl_np_value]&gt;=1500),2,0) + if([bl_sbp_admit]&lt;100,2,0) + if([bl_diabetes]="1",1,0) + if([bl_lvef_pct]&lt;30,2,0) + if([bl_ckm_stage]&gt;=3,2,0) + if([bl_distance_cardio_mi]&gt;50,1,0) + if([bl_social_support_limited]="1",1,0)</redcap:Calculation>
+        <redcap:SectionHeader>Calculated HEARTLAND Risk</redcap:SectionHeader>
+        <redcap:FormName>baseline</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.bl_risk_tier" Name="bl_risk_tier" DataType="text">
+        <Question>
+          <TranslatedText xml:lang="en">HEARTLAND risk tier</TranslatedText>
+        </Question>
+        <redcap:FieldAnnotation>@CALCTEXT(if([bl_risk_score]&lt;5,'low',if([bl_risk_score]&lt;9,'moderate','high')))</redcap:FieldAnnotation>
+        <redcap:FieldNote>Calculated text field</redcap:FieldNote>
+        <redcap:FormName>baseline</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.bl_pro_consent" Name="bl_pro_consent" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Consent to complete KCCQ-12 at baseline and 12 months</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.yesno"/>
+        <redcap:SectionHeader>Patient-Reported Outcomes</redcap:SectionHeader>
+        <redcap:FieldNote>Gates KCCQ-12 fields</redcap:FieldNote>
+        <redcap:FormName>baseline</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_arni_acei_arb_drug" Name="gdmt_arni_acei_arb_drug" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">RAS inhibitor drug</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.gdmt_arni_acei_arb_drug"/>
+        <redcap:SectionHeader>Renin-Angiotensin-System inhibitor</redcap:SectionHeader>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_arni_acei_arb_dose" Name="gdmt_arni_acei_arb_dose" DataType="float" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">RAS inhibitor total daily dose (mg)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>0</CheckValue>
+        </RangeCheck>
+        <redcap:BranchingLogic>[gdmt_arni_acei_arb_drug] &lt;&gt; "0"</redcap:BranchingLogic>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_arni_acei_arb_target" Name="gdmt_arni_acei_arb_target" DataType="float" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">RAS inhibitor target dose (mg)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>0</CheckValue>
+        </RangeCheck>
+        <redcap:BranchingLogic>[gdmt_arni_acei_arb_drug] &lt;&gt; "0"</redcap:BranchingLogic>
+        <redcap:FieldNote>Per protocol e.g. sacubitril/valsartan 97/103 BID = 200/day</redcap:FieldNote>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_arni_acei_arb_start" Name="gdmt_arni_acei_arb_start" DataType="date">
+        <Question>
+          <TranslatedText xml:lang="en">Date RAS inhibitor started</TranslatedText>
+        </Question>
+        <redcap:BranchingLogic>[gdmt_arni_acei_arb_drug] &lt;&gt; "0"</redcap:BranchingLogic>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_bb_drug" Name="gdmt_bb_drug" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Beta-blocker drug</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.gdmt_bb_drug"/>
+        <redcap:SectionHeader>Beta-blocker</redcap:SectionHeader>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_bb_dose" Name="gdmt_bb_dose" DataType="float" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">Beta-blocker total daily dose (mg)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>0</CheckValue>
+        </RangeCheck>
+        <redcap:BranchingLogic>[gdmt_bb_drug] &lt;&gt; "0"</redcap:BranchingLogic>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_bb_target" Name="gdmt_bb_target" DataType="float" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">Beta-blocker target dose (mg)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>0</CheckValue>
+        </RangeCheck>
+        <redcap:BranchingLogic>[gdmt_bb_drug] &lt;&gt; "0"</redcap:BranchingLogic>
+        <redcap:FieldNote>e.g., carvedilol 50 mg/day</redcap:FieldNote>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_bb_start" Name="gdmt_bb_start" DataType="date">
+        <Question>
+          <TranslatedText xml:lang="en">Date beta-blocker started</TranslatedText>
+        </Question>
+        <redcap:BranchingLogic>[gdmt_bb_drug] &lt;&gt; "0"</redcap:BranchingLogic>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_mra_drug" Name="gdmt_mra_drug" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">MRA drug</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.gdmt_mra_drug"/>
+        <redcap:SectionHeader>Mineralocorticoid Receptor Antagonist</redcap:SectionHeader>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_mra_dose" Name="gdmt_mra_dose" DataType="float" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">MRA total daily dose (mg)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>0</CheckValue>
+        </RangeCheck>
+        <redcap:BranchingLogic>[gdmt_mra_drug] &lt;&gt; "0"</redcap:BranchingLogic>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_mra_target" Name="gdmt_mra_target" DataType="float" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">MRA target dose (mg)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>0</CheckValue>
+        </RangeCheck>
+        <redcap:BranchingLogic>[gdmt_mra_drug] &lt;&gt; "0"</redcap:BranchingLogic>
+        <redcap:FieldNote>e.g., spironolactone 25-50 mg/day</redcap:FieldNote>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_mra_start" Name="gdmt_mra_start" DataType="date">
+        <Question>
+          <TranslatedText xml:lang="en">Date MRA started</TranslatedText>
+        </Question>
+        <redcap:BranchingLogic>[gdmt_mra_drug] &lt;&gt; "0"</redcap:BranchingLogic>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_sglt2_drug" Name="gdmt_sglt2_drug" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">SGLT2i drug</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.gdmt_sglt2_drug"/>
+        <redcap:SectionHeader>SGLT2 inhibitor</redcap:SectionHeader>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_sglt2_dose" Name="gdmt_sglt2_dose" DataType="float" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">SGLT2i dose (mg)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>0</CheckValue>
+        </RangeCheck>
+        <redcap:BranchingLogic>[gdmt_sglt2_drug] &lt;&gt; "0"</redcap:BranchingLogic>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_sglt2_start" Name="gdmt_sglt2_start" DataType="date">
+        <Question>
+          <TranslatedText xml:lang="en">Date SGLT2i started</TranslatedText>
+        </Question>
+        <redcap:BranchingLogic>[gdmt_sglt2_drug] &lt;&gt; "0"</redcap:BranchingLogic>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_hfpef_glp1" Name="gdmt_hfpef_glp1" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">GLP-1 RA prescribed (e.g., semaglutide)</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.yesno"/>
+        <redcap:BranchingLogic>[bl_lvef_category] = "3"</redcap:BranchingLogic>
+        <redcap:SectionHeader>HFpEF-specific (LVEF &gt;=50, Class IIa)</redcap:SectionHeader>
+        <redcap:FieldNote>STEP-HFpEF indication if BMI &gt;=30</redcap:FieldNote>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_classes_count" Name="gdmt_classes_count" DataType="float">
+        <Question>
+          <TranslatedText xml:lang="en">GDMT classes on board (0-4)</TranslatedText>
+        </Question>
+        <redcap:Calculation>if([gdmt_arni_acei_arb_drug]&lt;&gt;"0" and [gdmt_arni_acei_arb_drug]&lt;&gt;"",1,0) + if([gdmt_bb_drug]&lt;&gt;"0" and [gdmt_bb_drug]&lt;&gt;"",1,0) + if([gdmt_mra_drug]&lt;&gt;"0" and [gdmt_mra_drug]&lt;&gt;"",1,0) + if([gdmt_sglt2_drug]&lt;&gt;"0" and [gdmt_sglt2_drug]&lt;&gt;"",1,0)</redcap:Calculation>
+        <redcap:SectionHeader>Summary</redcap:SectionHeader>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_generic_bridge" Name="gdmt_generic_bridge" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Using generic $4 bridge regimen</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.yesno"/>
+        <redcap:FieldNote>ACE-I + BB + spironolactone generic combination</redcap:FieldNote>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.gdmt_init_tier" Name="gdmt_init_tier" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Initiation strategy</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.gdmt_init_tier"/>
+        <redcap:FormName>gdmt_status</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_event_number" Name="mo_event_number" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Follow-up month</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.mo_event_number"/>
+        <redcap:SectionHeader>Monthly follow-up (repeating instrument)</redcap:SectionHeader>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_date" Name="mo_date" DataType="date">
+        <Question>
+          <TranslatedText xml:lang="en">Follow-up visit date</TranslatedText>
+        </Question>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_track" Name="mo_track" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Monitoring track</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.mo_track"/>
+        <redcap:FieldNote>Track A = Bluetooth/app ; Track B = paper diary + phone</redcap:FieldNote>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_weight_lb" Name="mo_weight_lb" DataType="float" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">Weight (lb)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>50</CheckValue>
+        </RangeCheck>
+        <redcap:SectionHeader>Vitals</redcap:SectionHeader>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_sbp" Name="mo_sbp" DataType="integer" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">Systolic BP (mmHg)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>60</CheckValue>
+        </RangeCheck>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_dbp" Name="mo_dbp" DataType="integer" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">Diastolic BP (mmHg)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>30</CheckValue>
+        </RangeCheck>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_hr" Name="mo_hr" DataType="integer" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">Heart rate (bpm)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>30</CheckValue>
+        </RangeCheck>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_spo2" Name="mo_spo2" DataType="integer" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">SpO2 (%)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>50</CheckValue>
+        </RangeCheck>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_egfr" Name="mo_egfr" DataType="float" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">eGFR (mL/min/1.73m^2)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>5</CheckValue>
+        </RangeCheck>
+        <redcap:SectionHeader>Labs (if available)</redcap:SectionHeader>
+        <redcap:FieldNote>Optional</redcap:FieldNote>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_k" Name="mo_k" DataType="float" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">Potassium (mEq/L)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>2</CheckValue>
+        </RangeCheck>
+        <redcap:FieldNote>Optional</redcap:FieldNote>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_bnp" Name="mo_bnp" DataType="float" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">BNP or NT-proBNP (pg/mL)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>0</CheckValue>
+        </RangeCheck>
+        <redcap:FieldNote>Optional; quarterly if available</redcap:FieldNote>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_gdmt_change" Name="mo_gdmt_change" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Any GDMT change this month</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.yesno"/>
+        <redcap:SectionHeader>GDMT &amp; Events</redcap:SectionHeader>
+        <redcap:FieldNote>Titration, discontinuation, new agent</redcap:FieldNote>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_gdmt_change_notes" Name="mo_gdmt_change_notes" DataType="text">
+        <Question>
+          <TranslatedText xml:lang="en">GDMT change details</TranslatedText>
+        </Question>
+        <redcap:BranchingLogic>[mo_gdmt_change] = "1"</redcap:BranchingLogic>
+        <redcap:FieldNote>Drug, dose, reason</redcap:FieldNote>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_red_flag_count" Name="mo_red_flag_count" DataType="integer" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">Red-flag events this month (count)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>0</CheckValue>
+        </RangeCheck>
+        <redcap:FieldNote>Weight gain &gt;=5 lb/wk, worsening dyspnea, syncope, etc.</redcap:FieldNote>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_red_flag_types" Name="mo_red_flag_types" DataType="boolean">
+        <Question>
+          <TranslatedText xml:lang="en">Red-flag event types</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.mo_red_flag_types"/>
+        <redcap:BranchingLogic>[mo_red_flag_count] &gt; 0</redcap:BranchingLogic>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_hosp_any" Name="mo_hosp_any" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Any hospitalization this month</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.yesno"/>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_hosp_hf" Name="mo_hosp_hf" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">HF-related hospitalization</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.yesno"/>
+        <redcap:BranchingLogic>[mo_hosp_any] = "1"</redcap:BranchingLogic>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_ed_any" Name="mo_ed_any" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Any ED visit this month</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.yesno"/>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_ed_hf" Name="mo_ed_hf" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">HF-related ED visit</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.yesno"/>
+        <redcap:BranchingLogic>[mo_ed_any] = "1"</redcap:BranchingLogic>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.mo_kccq12_score" Name="mo_kccq12_score" DataType="integer" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">KCCQ-12 summary score (0-100)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>0</CheckValue>
+        </RangeCheck>
+        <redcap:BranchingLogic>[bl_pro_consent] = "1"</redcap:BranchingLogic>
+        <redcap:SectionHeader>Patient-Reported Outcomes (consent-gated)</redcap:SectionHeader>
+        <redcap:FieldNote>Higher = better health status</redcap:FieldNote>
+        <redcap:FormName>monthly_followup</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.out_vital_status" Name="out_vital_status" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Vital status at 12 months</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.out_vital_status"/>
+        <redcap:SectionHeader>12-month outcomes</redcap:SectionHeader>
+        <redcap:FormName>outcomes_12mo</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.out_death_date" Name="out_death_date" DataType="date">
+        <Question>
+          <TranslatedText xml:lang="en">Date of death</TranslatedText>
+        </Question>
+        <redcap:BranchingLogic>[out_vital_status] = "2"</redcap:BranchingLogic>
+        <redcap:FormName>outcomes_12mo</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.out_death_cardiovascular" Name="out_death_cardiovascular" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">Cardiovascular cause of death</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.yesno"/>
+        <redcap:BranchingLogic>[out_vital_status] = "2"</redcap:BranchingLogic>
+        <redcap:FormName>outcomes_12mo</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.out_hf_hosp_count" Name="out_hf_hosp_count" DataType="integer" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">HF hospitalizations (12-month total)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>0</CheckValue>
+        </RangeCheck>
+        <redcap:FormName>outcomes_12mo</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.out_hf_ed_count" Name="out_hf_ed_count" DataType="integer" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">HF ED visits (12-month total)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>0</CheckValue>
+        </RangeCheck>
+        <redcap:FormName>outcomes_12mo</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.out_days_alive_oh" Name="out_days_alive_oh" DataType="integer" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">Days alive and out of hospital (0-365)</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>0</CheckValue>
+        </RangeCheck>
+        <redcap:FormName>outcomes_12mo</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.out_gdmt_optimized" Name="out_gdmt_optimized" DataType="integer">
+        <Question>
+          <TranslatedText xml:lang="en">&gt;=3 GDMT classes at target dose at 12 months</TranslatedText>
+        </Question>
+        <CodeListRef CodeListOID="CL.yesno"/>
+        <redcap:FormName>outcomes_12mo</redcap:FormName>
+      </ItemDef>
+      <ItemDef OID="Item.out_kccq12_12mo" Name="out_kccq12_12mo" DataType="integer" SignificantDigits="0">
+        <Question>
+          <TranslatedText xml:lang="en">KCCQ-12 score at 12 months</TranslatedText>
+        </Question>
+        <RangeCheck Comparator="GE" SoftHard="Soft">
+          <CheckValue>0</CheckValue>
+        </RangeCheck>
+        <redcap:BranchingLogic>[bl_pro_consent] = "1"</redcap:BranchingLogic>
+        <redcap:FormName>outcomes_12mo</redcap:FormName>
+      </ItemDef>
+      <CodeList OID="CL.yesno" Name="CL.yesno" DataType="text">
+        <CodeListItem CodedValue="1">
+          <Decode>
+            <TranslatedText xml:lang="en">Yes</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="0">
+          <Decode>
+            <TranslatedText xml:lang="en">No</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+      <CodeList OID="CL.facility_tier" Name="CL.facility_tier" DataType="text">
+        <CodeListItem CodedValue="1">
+          <Decode>
+            <TranslatedText xml:lang="en">Tier 1 (Minimal)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="2">
+          <Decode>
+            <TranslatedText xml:lang="en">Tier 2 (Standard)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="3">
+          <Decode>
+            <TranslatedText xml:lang="en">Tier 3 (Advanced)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+      <CodeList OID="CL.rural_urban" Name="CL.rural_urban" DataType="text">
+        <CodeListItem CodedValue="1">
+          <Decode>
+            <TranslatedText xml:lang="en">Metropolitan (1-3)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="2">
+          <Decode>
+            <TranslatedText xml:lang="en">Micropolitan (4-6)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="3">
+          <Decode>
+            <TranslatedText xml:lang="en">Small town (7-9)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="4">
+          <Decode>
+            <TranslatedText xml:lang="en">Rural (10)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+      <CodeList OID="CL.sex" Name="CL.sex" DataType="text">
+        <CodeListItem CodedValue="1">
+          <Decode>
+            <TranslatedText xml:lang="en">Male</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="2">
+          <Decode>
+            <TranslatedText xml:lang="en">Female</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="3">
+          <Decode>
+            <TranslatedText xml:lang="en">Other / not disclosed</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+      <CodeList OID="CL.race" Name="CL.race" DataType="text">
+        <CodeListItem CodedValue="1">
+          <Decode>
+            <TranslatedText xml:lang="en">American Indian / Alaska Native</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="2">
+          <Decode>
+            <TranslatedText xml:lang="en">Asian</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="3">
+          <Decode>
+            <TranslatedText xml:lang="en">Black or African American</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="4">
+          <Decode>
+            <TranslatedText xml:lang="en">Native Hawaiian / Pacific Islander</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="5">
+          <Decode>
+            <TranslatedText xml:lang="en">White</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="6">
+          <Decode>
+            <TranslatedText xml:lang="en">Other</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="7">
+          <Decode>
+            <TranslatedText xml:lang="en">Unknown</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+      <CodeList OID="CL.ethnicity" Name="CL.ethnicity" DataType="text">
+        <CodeListItem CodedValue="1">
+          <Decode>
+            <TranslatedText xml:lang="en">Hispanic / Latino</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="2">
+          <Decode>
+            <TranslatedText xml:lang="en">Not Hispanic / Latino</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="3">
+          <Decode>
+            <TranslatedText xml:lang="en">Unknown</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+      <CodeList OID="CL.bl_lvef_category" Name="CL.bl_lvef_category" DataType="text">
+        <CodeListItem CodedValue="1">
+          <Decode>
+            <TranslatedText xml:lang="en">HFrEF (LVEF &lt;=40)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="2">
+          <Decode>
+            <TranslatedText xml:lang="en">HFmrEF (LVEF 41-49)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="3">
+          <Decode>
+            <TranslatedText xml:lang="en">HFpEF (LVEF &gt;=50)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+      <CodeList OID="CL.bl_np_type" Name="CL.bl_np_type" DataType="text">
+        <CodeListItem CodedValue="1">
+          <Decode>
+            <TranslatedText xml:lang="en">BNP</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="2">
+          <Decode>
+            <TranslatedText xml:lang="en">NT-proBNP</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="3">
+          <Decode>
+            <TranslatedText xml:lang="en">Not measured</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+      <CodeList OID="CL.bl_ckm_stage" Name="CL.bl_ckm_stage" DataType="text">
+        <CodeListItem CodedValue="0">
+          <Decode>
+            <TranslatedText xml:lang="en">Stage 0 (no risk)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="1">
+          <Decode>
+            <TranslatedText xml:lang="en">Stage 1 (excess adiposity)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="2">
+          <Decode>
+            <TranslatedText xml:lang="en">Stage 2 (metabolic risk / CKD)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="3">
+          <Decode>
+            <TranslatedText xml:lang="en">Stage 3 (subclinical CVD)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="4">
+          <Decode>
+            <TranslatedText xml:lang="en">Stage 4 (clinical CVD)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+      <CodeList OID="CL.gdmt_arni_acei_arb_drug" Name="CL.gdmt_arni_acei_arb_drug" DataType="text">
+        <CodeListItem CodedValue="1">
+          <Decode>
+            <TranslatedText xml:lang="en">Sacubitril/valsartan (ARNI)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="2">
+          <Decode>
+            <TranslatedText xml:lang="en">Lisinopril</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="3">
+          <Decode>
+            <TranslatedText xml:lang="en">Enalapril</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="4">
+          <Decode>
+            <TranslatedText xml:lang="en">Losartan</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="5">
+          <Decode>
+            <TranslatedText xml:lang="en">Valsartan</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="6">
+          <Decode>
+            <TranslatedText xml:lang="en">Other</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="0">
+          <Decode>
+            <TranslatedText xml:lang="en">None</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+      <CodeList OID="CL.gdmt_bb_drug" Name="CL.gdmt_bb_drug" DataType="text">
+        <CodeListItem CodedValue="1">
+          <Decode>
+            <TranslatedText xml:lang="en">Carvedilol</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="2">
+          <Decode>
+            <TranslatedText xml:lang="en">Metoprolol succinate</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="3">
+          <Decode>
+            <TranslatedText xml:lang="en">Bisoprolol</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="4">
+          <Decode>
+            <TranslatedText xml:lang="en">Other</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="0">
+          <Decode>
+            <TranslatedText xml:lang="en">None</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+      <CodeList OID="CL.gdmt_mra_drug" Name="CL.gdmt_mra_drug" DataType="text">
+        <CodeListItem CodedValue="1">
+          <Decode>
+            <TranslatedText xml:lang="en">Spironolactone</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="2">
+          <Decode>
+            <TranslatedText xml:lang="en">Eplerenone</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="3">
+          <Decode>
+            <TranslatedText xml:lang="en">Finerenone</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="4">
+          <Decode>
+            <TranslatedText xml:lang="en">Other</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="0">
+          <Decode>
+            <TranslatedText xml:lang="en">None</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+      <CodeList OID="CL.gdmt_sglt2_drug" Name="CL.gdmt_sglt2_drug" DataType="text">
+        <CodeListItem CodedValue="1">
+          <Decode>
+            <TranslatedText xml:lang="en">Dapagliflozin</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="2">
+          <Decode>
+            <TranslatedText xml:lang="en">Empagliflozin</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="3">
+          <Decode>
+            <TranslatedText xml:lang="en">Other</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="0">
+          <Decode>
+            <TranslatedText xml:lang="en">None</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+      <CodeList OID="CL.gdmt_init_tier" Name="CL.gdmt_init_tier" DataType="text">
+        <CodeListItem CodedValue="1">
+          <Decode>
+            <TranslatedText xml:lang="en">Tier 1 (&gt;=2 classes before discharge)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="2">
+          <Decode>
+            <TranslatedText xml:lang="en">Tier 2 (all tolerated, uptitrate 2-4 weeks)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="3">
+          <Decode>
+            <TranslatedText xml:lang="en">Tier 3 (rapid-sequence per STRONG-HF)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+      <CodeList OID="CL.mo_event_number" Name="CL.mo_event_number" DataType="text">
+        <CodeListItem CodedValue="1">
+          <Decode>
+            <TranslatedText xml:lang="en">Month 1</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="2">
+          <Decode>
+            <TranslatedText xml:lang="en">Month 2</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="3">
+          <Decode>
+            <TranslatedText xml:lang="en">Month 3</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="4">
+          <Decode>
+            <TranslatedText xml:lang="en">Month 4</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="5">
+          <Decode>
+            <TranslatedText xml:lang="en">Month 5</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="6">
+          <Decode>
+            <TranslatedText xml:lang="en">Month 6</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="7">
+          <Decode>
+            <TranslatedText xml:lang="en">Month 7</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="8">
+          <Decode>
+            <TranslatedText xml:lang="en">Month 8</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="9">
+          <Decode>
+            <TranslatedText xml:lang="en">Month 9</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="10">
+          <Decode>
+            <TranslatedText xml:lang="en">Month 10</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="11">
+          <Decode>
+            <TranslatedText xml:lang="en">Month 11</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="12">
+          <Decode>
+            <TranslatedText xml:lang="en">Month 12</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+      <CodeList OID="CL.mo_track" Name="CL.mo_track" DataType="text">
+        <CodeListItem CodedValue="A">
+          <Decode>
+            <TranslatedText xml:lang="en">Track A (digital)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="B">
+          <Decode>
+            <TranslatedText xml:lang="en">Track B (analog)</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+      <CodeList OID="CL.mo_red_flag_types" Name="CL.mo_red_flag_types" DataType="text">
+        <CodeListItem CodedValue="1">
+          <Decode>
+            <TranslatedText xml:lang="en">Weight gain &gt;=5 lb/wk or &gt;=3 lb/2d</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="2">
+          <Decode>
+            <TranslatedText xml:lang="en">Orthopnea worsening</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="3">
+          <Decode>
+            <TranslatedText xml:lang="en">PND</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="4">
+          <Decode>
+            <TranslatedText xml:lang="en">Peripheral edema worsening</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="5">
+          <Decode>
+            <TranslatedText xml:lang="en">Syncope / near-syncope</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="6">
+          <Decode>
+            <TranslatedText xml:lang="en">Angina</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="7">
+          <Decode>
+            <TranslatedText xml:lang="en">Palpitations / arrhythmia</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="8">
+          <Decode>
+            <TranslatedText xml:lang="en">Other</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+      <CodeList OID="CL.out_vital_status" Name="CL.out_vital_status" DataType="text">
+        <CodeListItem CodedValue="1">
+          <Decode>
+            <TranslatedText xml:lang="en">Alive</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="2">
+          <Decode>
+            <TranslatedText xml:lang="en">Deceased</TranslatedText>
+          </Decode>
+        </CodeListItem>
+        <CodeListItem CodedValue="3">
+          <Decode>
+            <TranslatedText xml:lang="en">Lost to follow-up</TranslatedText>
+          </Decode>
+        </CodeListItem>
+      </CodeList>
+    </MetaDataVersion>
+  </Study>
+</ODM>

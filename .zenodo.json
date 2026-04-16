@@ -1,0 +1,45 @@
+{
+  "title": "HEARTLAND Protocol REDCap Instrument Template",
+  "description": "Pre-built REDCap data dictionary and XML instrument for the HEARTLAND Protocol v3.3 (Heart failure Evidence-based Access in Rural Treatment, Linking Advanced Network Delivery). Rural hospitals and research institutions with REDCap can import this template and immediately begin structured data collection for HEARTLAND validation studies. Includes CSV data dictionary (75 fields across 5 forms), ODM-compatible XML instrument, synthetic sample data, human-readable codebook, step-by-step import guide, and a reference validation study protocol (n=150). Clinical definitions match HEARTLAND Protocol v3.3 Table 1 (Risk Score, 0-18 weighted points, 3 tiers) and Module 4 (GDMT).",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Ferreira, Vicky Muller",
+      "affiliation": "Independent physician-researcher",
+      "orcid": "0009-0009-1099-5690"
+    }
+  ],
+  "keywords": [
+    "heart failure",
+    "REDCap",
+    "rural health",
+    "clinical data capture",
+    "GDMT",
+    "risk stratification",
+    "HEARTLAND Protocol",
+    "Critical Access Hospital",
+    "implementation science",
+    "data dictionary",
+    "ODM"
+  ],
+  "communities": [
+    {"identifier": "redcap"}
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.18566403",
+      "relation": "isDerivedFrom",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.17605/OSF.IO/YUSGH",
+      "relation": "isSupplementTo",
+      "scheme": "doi"
+    }
+  ],
+  "version": "1.0.0",
+  "language": "eng"
+}
