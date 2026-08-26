@@ -104,6 +104,12 @@ Ferreira VM. HEARTLAND Protocol REDCap Instrument Template, v1.0.0. 2026.
 
 Machine-readable citation: [`CITATION.cff`](CITATION.cff).
 
+## Software preservation
+
+Software Heritage snapshot (archived 2026-08-25): [`swh:1:snp:f3ff79845487b0c6ff853b772f14364f74849687`](https://archive.softwareheritage.org/swh:1:snp:f3ff79845487b0c6ff853b772f14364f74849687/)
+
+This persistent SWHID identifies the repository snapshot captured on that date; archival does not imply endorsement or validation.
+
 ## Author
 
 **Vicky Muller Ferreira, MD**

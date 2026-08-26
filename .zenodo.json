@@ -38,6 +38,12 @@
       "identifier": "10.17605/OSF.IO/YUSGH",
       "relation": "isSupplementTo",
       "scheme": "doi"
+    },
+    {
+      "identifier": "https://archive.softwareheritage.org/swh:1:snp:f3ff79845487b0c6ff853b772f14364f74849687/",
+      "relation": "isSupplementedBy",
+      "resource_type": "software",
+      "scheme": "url"
     }
   ],
   "version": "1.0.0",

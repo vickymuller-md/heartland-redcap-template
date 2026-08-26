@@ -12,6 +12,10 @@ authors:
     email: vickymuller@heartlandprotocol.org
 repository-code: "https://github.com/vickymuller-md/heartland-redcap-template"
 url: "https://github.com/vickymuller-md/heartland-redcap-template"
+identifiers:
+  - type: swh
+    value: "swh:1:snp:f3ff79845487b0c6ff853b772f14364f74849687"
+    description: "Software Heritage snapshot archived 2026-08-25"
 abstract: >-
   Pre-built REDCap data dictionary (CSV + ODM XML) for the
   HEARTLAND Protocol v3.3. 75 fields across 5 forms covering
