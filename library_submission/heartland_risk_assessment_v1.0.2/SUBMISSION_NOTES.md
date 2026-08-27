@@ -1,6 +1,6 @@
 # HEARTLAND Risk Assessment - REDCap Shared Library Submission Notes
 
-Version: 1.0.1
+Version: 1.0.2
 
 Prepared: 2026-08-27
 
@@ -12,12 +12,12 @@ ORCID: 0009-0009-1099-5690
 
 ## Proposed library title
 
-HEARTLAND Risk Assessment, version 1.0.1
+HEARTLAND Risk Assessment, version 1.0.2
 
 ## Package
 
-- `heartland_risk_assessment_unscored_v1.0.1.csv` and `.xml`: eleven raw HEARTLAND risk-input fields, with no calculated score or tier.
-- `heartland_risk_assessment_scored_v1.0.1.csv` and `.xml`: the same inputs with `_sc` variable suffixes plus the published 0-18 weighted score and three-tier calculation.
+- `heartland_risk_assessment_unscored_v1.0.2.csv` and `.xml`: eleven raw HEARTLAND risk-input fields, with no calculated score or tier.
+- `heartland_risk_assessment_scored_v1.0.2.csv` and `.xml`: the same inputs with `_sc` variable suffixes plus the published 0-18 weighted score and three-tier calculation.
 - Scored and unscored variants follow the REDLOC coding guideline.
 - Variable names are lowercase, underscore-delimited, and no longer than 26 characters.
 - The standalone instruments contain no dates, names, KCCQ content, or other direct identifiers.

@@ -2,7 +2,7 @@
 
 ## Instrument name
 
-HEARTLAND Risk Assessment, version 1.0.1
+HEARTLAND Risk Assessment, version 1.0.2
 
 ## Abbreviation
 

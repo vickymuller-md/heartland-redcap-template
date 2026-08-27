@@ -11,7 +11,7 @@ from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 MASTER = ROOT / "instruments/heartland_data_dictionary.csv"
-PACKAGE = ROOT / "library_submission/heartland_risk_assessment_v1.0.1"
+PACKAGE = ROOT / "library_submission/heartland_risk_assessment_v1.0.2"
 DATE_FIELDS = {
     "enr_date",
     "consent_date",
@@ -55,8 +55,8 @@ def main() -> None:
     facility = next(row for row in master if row["Variable / Field Name"] == "facility_name")
     assert facility["Identifier?"].lower() == "y"
 
-    unscored = rows(PACKAGE / "heartland_risk_assessment_unscored_v1.0.1.csv")
-    scored = rows(PACKAGE / "heartland_risk_assessment_scored_v1.0.1.csv")
+    unscored = rows(PACKAGE / "heartland_risk_assessment_unscored_v1.0.2.csv")
+    scored = rows(PACKAGE / "heartland_risk_assessment_scored_v1.0.2.csv")
     assert len(unscored) == 11
     assert len(scored) == 13
     assert not any(row["Field Type"] == "calc" for row in unscored)

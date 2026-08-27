@@ -215,7 +215,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--input", required=True, type=Path)
     ap.add_argument("--output", required=True, type=Path)
-    ap.add_argument("--version", default="1.0.1")
+    ap.add_argument("--version", default="1.0.2")
     ap.add_argument("--study-name", default="HEARTLAND Protocol REDCap Template")
     args = ap.parse_args()
 

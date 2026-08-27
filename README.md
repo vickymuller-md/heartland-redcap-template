@@ -65,7 +65,7 @@ redcap-template/
 │   ├── variable_definitions.md
 │   └── validation_study_protocol.md
 ├── library_submission/
-│   └── heartland_risk_assessment_v1.0.1/  <- REDLOC scored/unscored package
+│   └── heartland_risk_assessment_v1.0.2/  <- REDLOC scored/unscored package
 ├── examples/
 │   └── sample_data.csv                 <- 20 synthetic patients
 └── scripts/
@@ -101,7 +101,7 @@ Ferreira VM. HEARTLAND Protocol v3.3 - *Cureus*. 2026;18(3):e104817. DOI [10.775
 ## Citation
 
 ```
-Ferreira VM. HEARTLAND Protocol REDCap Instrument Template, v1.0.1. 2026.
+Ferreira VM. HEARTLAND Protocol REDCap Instrument Template, v1.0.2. 2026.
   Zenodo. DOI: 10.5281/zenodo.19635000.
 ```
 

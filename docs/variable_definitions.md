@@ -1,6 +1,6 @@
 ---
 title: "HEARTLAND Protocol — REDCap Variable Definitions"
-subtitle: "Codebook for `heartland_data_dictionary.csv` (v1.0.1)"
+subtitle: "Codebook for `heartland_data_dictionary.csv` (v1.0.2)"
 author: "Vicky Muller Ferreira, MD"
 date: "2026-08-27"
 ---

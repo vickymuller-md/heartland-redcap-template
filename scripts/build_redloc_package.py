@@ -11,9 +11,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "instruments/heartland_data_dictionary.csv"
-OUTPUT = ROOT / "library_submission/heartland_risk_assessment_v1.0.1"
+OUTPUT = ROOT / "library_submission/heartland_risk_assessment_v1.0.2"
 CONVERTER = ROOT / "scripts/csv_to_xml.py"
-VERSION = "1.0.1"
+VERSION = "1.0.2"
 
 FIELD_MAP = [
     ("age", "hl_age"),
@@ -30,7 +30,7 @@ FIELD_MAP = [
 ]
 
 DISCLAIMER = (
-    "HEARTLAND Risk Assessment v1.0.1 - research use only. The HEARTLAND score is an "
+    "HEARTLAND Risk Assessment v1.0.2 - research use only. The HEARTLAND score is an "
     "unvalidated implementation heuristic and must not be used for clinical decision-making."
 )
 
@@ -137,19 +137,19 @@ def convert(csv_path: Path, xml_path: Path, study_name: str) -> None:
 
 def main() -> int:
     fieldnames, source = read_source()
-    unscored_csv = OUTPUT / "heartland_risk_assessment_unscored_v1.0.1.csv"
-    scored_csv = OUTPUT / "heartland_risk_assessment_scored_v1.0.1.csv"
+    unscored_csv = OUTPUT / "heartland_risk_assessment_unscored_v1.0.2.csv"
+    scored_csv = OUTPUT / "heartland_risk_assessment_scored_v1.0.2.csv"
     write_csv(unscored_csv, fieldnames, base_rows(source, scored=False))
     write_csv(scored_csv, fieldnames, scored_rows(source))
     convert(
         unscored_csv,
-        OUTPUT / "heartland_risk_assessment_unscored_v1.0.1.xml",
-        "HEARTLAND Risk Assessment v1.0.1",
+        OUTPUT / "heartland_risk_assessment_unscored_v1.0.2.xml",
+        "HEARTLAND Risk Assessment v1.0.2",
     )
     convert(
         scored_csv,
-        OUTPUT / "heartland_risk_assessment_scored_v1.0.1.xml",
-        "HEARTLAND Risk Assessment Scored v1.0.1",
+        OUTPUT / "heartland_risk_assessment_scored_v1.0.2.xml",
+        "HEARTLAND Risk Assessment Scored v1.0.2",
     )
     print(f"Built REDLOC package in {OUTPUT}")
     return 0
