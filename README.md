@@ -1,8 +1,8 @@
 # HEARTLAND Protocol — REDCap Instrument Template
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![DOI](https://img.shields.io/badge/DOI-pending%20Zenodo-blue)](#citation)
-[![Protocol](https://img.shields.io/badge/Protocol-HEARTLAND%20v3.3-green)](https://doi.org/10.5281/zenodo.18566403)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19635000-blue)](https://doi.org/10.5281/zenodo.19635000)
+[![Protocol](https://img.shields.io/badge/Protocol-HEARTLAND%20v3.3-green)](https://doi.org/10.7759/cureus.104817)
 
 Pre-built REDCap data collection instrument for the **HEARTLAND Protocol** (Heart failure Evidence-based Access in Rural Treatment, Linking Advanced Network Delivery). Rural hospitals and research institutions with REDCap can import this template and immediately begin structured data collection for HEARTLAND Protocol validation studies — zero development cost.
 
@@ -14,6 +14,7 @@ Pre-built REDCap data collection instrument for the **HEARTLAND Protocol** (Hear
 - **Codebook PDF** — human-readable variable reference
 - **Import guide** — step-by-step instructions for REDCap 14.x
 - **Suggested validation study protocol** — n=150 reference design, STROBE-aligned
+- **REDCap Shared Library package** — scored and unscored standalone HEARTLAND Risk Assessment instruments prepared to REDLOC coding guidance
 
 ## Quickstart
 
@@ -63,6 +64,8 @@ redcap-template/
 │   ├── import_guide.md
 │   ├── variable_definitions.md
 │   └── validation_study_protocol.md
+├── library_submission/
+│   └── heartland_risk_assessment_v1.0.1/  <- REDLOC scored/unscored package
 ├── examples/
 │   └── sample_data.csv                 <- 20 synthetic patients
 └── scripts/
@@ -93,13 +96,13 @@ pandoc /tmp/codebook_ascii.md \
 
 ## Protocol reference
 
-HEARTLAND Protocol v3.3 — Ferreira VM. Heart failure Evidence-based Access in Rural Treatment, Linking Advanced Network Delivery. *Cureus* 2026. DOI [10.5281/zenodo.18566403](https://doi.org/10.5281/zenodo.18566403). Clinical definitions in this template match v3.3 Table 1 (Risk Score) and Module 4 (GDMT).
+Ferreira VM. HEARTLAND Protocol v3.3 - *Cureus*. 2026;18(3):e104817. DOI [10.7759/cureus.104817](https://doi.org/10.7759/cureus.104817); current protocol deposit [10.5281/zenodo.19101219](https://doi.org/10.5281/zenodo.19101219). Clinical definitions in this template match Table 1 (Risk Score) and Module 4 (GDMT).
 
 ## Citation
 
 ```
-Ferreira VM. HEARTLAND Protocol REDCap Instrument Template, v1.0.0. 2026.
-  Zenodo. DOI: 10.5281/zenodo.<to-be-minted-on-release>.
+Ferreira VM. HEARTLAND Protocol REDCap Instrument Template, v1.0.1. 2026.
+  Zenodo. DOI: 10.5281/zenodo.19635000.
 ```
 
 Machine-readable citation: [`CITATION.cff`](CITATION.cff).
@@ -122,4 +125,4 @@ MIT — see [LICENSE](LICENSE). Clinical content remains © 2026 Vicky Muller Fe
 
 ## Disclaimer
 
-This template is non-clinical reference material. Any site adopting it for patient care or research assumes full responsibility for local IRB approval, informed consent, and clinical oversight. The HEARTLAND Risk Score is a pragmatic heuristic and has not been formally validated — the suggested validation study (`docs/validation_study_protocol.md`) is the first step toward validation.
+This template is non-clinical reference material. Any site adopting it for research assumes full responsibility for local IRB approval, informed consent, privacy review, and clinical oversight. All full dates and facility name are marked as identifiers in the primary data dictionary. KCCQ-12 fields store only site-computed summary scores; this repository does not reproduce the copyrighted questionnaire. The HEARTLAND Risk Score is a pragmatic heuristic that has not been externally validated and must not be used for patient-care decisions.

@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
-<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:redcap="https://projectredcap.org" FileType="Snapshot" FileOID="heartland_redcap_template_v1" Granularity="Metadata" CreationDateTime="2026-04-16T00:00:00" SourceSystem="HEARTLAND REDCap template generator" ODMVersion="1.3.2">
-  <Study OID="heartland_study">
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:redcap="https://projectredcap.org" FileType="Snapshot" FileOID="HEARTLAND_Protocol_REDCap_Template_v1.0.1" Granularity="Metadata" CreationDateTime="2026-08-27T00:00:00" SourceSystem="HEARTLAND REDCap template generator" ODMVersion="1.3.2">
+  <Study OID="Study.HEARTLAND_Protocol_REDCap_Template">
     <GlobalVariables>
       <StudyName>HEARTLAND Protocol REDCap Template</StudyName>
-      <StudyDescription>Pre-built REDCap instrument for HEARTLAND Protocol v3.3 data collection.</StudyDescription>
+      <StudyDescription>Open REDCap instrument for HEARTLAND Protocol research data collection.</StudyDescription>
       <ProtocolName>HEARTLAND v3.3</ProtocolName>
     </GlobalVariables>
-    <MetaDataVersion OID="Metadata.1" Name="HEARTLAND v1.0.0">
+    <MetaDataVersion OID="Metadata.1.0.1" Name="HEARTLAND Protocol REDCap Template v1.0.1">
       <Protocol>
         <StudyEventRef StudyEventOID="Event.enrollment" Mandatory="Yes" OrderNumber="1"/>
         <StudyEventRef StudyEventOID="Event.baseline" Mandatory="Yes" OrderNumber="2"/>
@@ -129,33 +129,33 @@
         <ItemRef ItemOID="Item.out_gdmt_optimized" Mandatory="No" OrderNumber="7"/>
         <ItemRef ItemOID="Item.out_kccq12_12mo" Mandatory="No" OrderNumber="8"/>
       </ItemGroupDef>
-      <ItemDef OID="Item.record_id" Name="record_id" DataType="text">
+      <ItemDef OID="Item.record_id" Name="record_id" DataType="text" redcap:Variable="record_id" redcap:FieldType="text">
         <Question>
           <TranslatedText xml:lang="en">Record ID</TranslatedText>
         </Question>
         <redcap:FieldNote>REDCap auto-assigns on import</redcap:FieldNote>
         <redcap:FormName>enrollment</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.enr_date" Name="enr_date" DataType="date">
+      <ItemDef OID="Item.enr_date" Name="enr_date" DataType="date" redcap:Variable="enr_date" redcap:FieldType="text" redcap:Identifier="y" redcap:RequiredField="y" redcap:TextValidationType="date_ymd">
         <Question>
           <TranslatedText xml:lang="en">Enrollment date</TranslatedText>
         </Question>
         <redcap:SectionHeader>Enrollment information</redcap:SectionHeader>
         <redcap:FormName>enrollment</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.consent_date" Name="consent_date" DataType="date">
+      <ItemDef OID="Item.consent_date" Name="consent_date" DataType="date" redcap:Variable="consent_date" redcap:FieldType="text" redcap:Identifier="y" redcap:RequiredField="y" redcap:TextValidationType="date_ymd">
         <Question>
           <TranslatedText xml:lang="en">Informed consent date</TranslatedText>
         </Question>
         <redcap:FormName>enrollment</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.facility_name" Name="facility_name" DataType="text">
+      <ItemDef OID="Item.facility_name" Name="facility_name" DataType="text" redcap:Variable="facility_name" redcap:FieldType="text" redcap:Identifier="y" redcap:RequiredField="y">
         <Question>
           <TranslatedText xml:lang="en">Facility name</TranslatedText>
         </Question>
         <redcap:FormName>enrollment</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.facility_cah" Name="facility_cah" DataType="integer">
+      <ItemDef OID="Item.facility_cah" Name="facility_cah" DataType="integer" redcap:Variable="facility_cah" redcap:FieldType="yesno" redcap:RequiredField="y">
         <Question>
           <TranslatedText xml:lang="en">Critical Access Hospital (CAH)?</TranslatedText>
         </Question>
@@ -163,7 +163,7 @@
         <redcap:FieldNote>Federal CAH designation</redcap:FieldNote>
         <redcap:FormName>enrollment</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.facility_tier" Name="facility_tier" DataType="integer">
+      <ItemDef OID="Item.facility_tier" Name="facility_tier" DataType="integer" redcap:Variable="facility_tier" redcap:FieldType="radio" redcap:RequiredField="y">
         <Question>
           <TranslatedText xml:lang="en">HEARTLAND implementation tier</TranslatedText>
         </Question>
@@ -171,26 +171,26 @@
         <redcap:FieldNote>Per Protocol Table 2</redcap:FieldNote>
         <redcap:FormName>enrollment</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.state" Name="state" DataType="text">
+      <ItemDef OID="Item.state" Name="state" DataType="text" redcap:Variable="state" redcap:FieldType="text" redcap:RequiredField="y">
         <Question>
           <TranslatedText xml:lang="en">US state (2-letter)</TranslatedText>
         </Question>
         <redcap:FormName>enrollment</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.county_fips" Name="county_fips" DataType="integer">
+      <ItemDef OID="Item.county_fips" Name="county_fips" DataType="integer" redcap:Variable="county_fips" redcap:FieldType="text" redcap:TextValidationType="integer">
         <Question>
           <TranslatedText xml:lang="en">County FIPS code (5-digit)</TranslatedText>
         </Question>
         <redcap:FormName>enrollment</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.rural_urban" Name="rural_urban" DataType="integer">
+      <ItemDef OID="Item.rural_urban" Name="rural_urban" DataType="integer" redcap:Variable="rural_urban" redcap:FieldType="radio">
         <Question>
           <TranslatedText xml:lang="en">USDA RUCA classification</TranslatedText>
         </Question>
         <CodeListRef CodeListOID="CL.rural_urban"/>
         <redcap:FormName>enrollment</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.age" Name="age" DataType="integer" SignificantDigits="0">
+      <ItemDef OID="Item.age" Name="age" DataType="integer" redcap:Variable="age" redcap:FieldType="text" redcap:RequiredField="y" redcap:TextValidationType="integer" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">Age (years)</TranslatedText>
         </Question>
@@ -200,28 +200,28 @@
         <redcap:SectionHeader>Patient demographics</redcap:SectionHeader>
         <redcap:FormName>enrollment</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.sex" Name="sex" DataType="integer">
+      <ItemDef OID="Item.sex" Name="sex" DataType="integer" redcap:Variable="sex" redcap:FieldType="radio" redcap:RequiredField="y">
         <Question>
           <TranslatedText xml:lang="en">Sex</TranslatedText>
         </Question>
         <CodeListRef CodeListOID="CL.sex"/>
         <redcap:FormName>enrollment</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.race" Name="race" DataType="boolean">
+      <ItemDef OID="Item.race" Name="race" DataType="boolean" redcap:Variable="race" redcap:FieldType="checkbox">
         <Question>
           <TranslatedText xml:lang="en">Race (check all that apply)</TranslatedText>
         </Question>
         <CodeListRef CodeListOID="CL.race"/>
         <redcap:FormName>enrollment</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.ethnicity" Name="ethnicity" DataType="integer">
+      <ItemDef OID="Item.ethnicity" Name="ethnicity" DataType="integer" redcap:Variable="ethnicity" redcap:FieldType="radio">
         <Question>
           <TranslatedText xml:lang="en">Ethnicity</TranslatedText>
         </Question>
         <CodeListRef CodeListOID="CL.ethnicity"/>
         <redcap:FormName>enrollment</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.bl_prior_hf_hosp_6mo" Name="bl_prior_hf_hosp_6mo" DataType="integer">
+      <ItemDef OID="Item.bl_prior_hf_hosp_6mo" Name="bl_prior_hf_hosp_6mo" DataType="integer" redcap:Variable="bl_prior_hf_hosp_6mo" redcap:FieldType="yesno" redcap:RequiredField="y">
         <Question>
           <TranslatedText xml:lang="en">Prior HF hospitalization within 6 months</TranslatedText>
         </Question>
@@ -230,7 +230,7 @@
         <redcap:FieldNote>+3 points if Yes</redcap:FieldNote>
         <redcap:FormName>baseline</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.bl_lvef_pct" Name="bl_lvef_pct" DataType="integer" SignificantDigits="0">
+      <ItemDef OID="Item.bl_lvef_pct" Name="bl_lvef_pct" DataType="integer" redcap:Variable="bl_lvef_pct" redcap:FieldType="text" redcap:RequiredField="y" redcap:TextValidationType="integer" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">LVEF (%)</TranslatedText>
         </Question>
@@ -240,7 +240,7 @@
         <redcap:FieldNote>+2 points if &lt;30</redcap:FieldNote>
         <redcap:FormName>baseline</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.bl_lvef_category" Name="bl_lvef_category" DataType="integer">
+      <ItemDef OID="Item.bl_lvef_category" Name="bl_lvef_category" DataType="integer" redcap:Variable="bl_lvef_category" redcap:FieldType="radio" redcap:RequiredField="y">
         <Question>
           <TranslatedText xml:lang="en">LVEF category</TranslatedText>
         </Question>
@@ -248,7 +248,7 @@
         <redcap:FieldNote>Assign per current echo</redcap:FieldNote>
         <redcap:FormName>baseline</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.bl_egfr" Name="bl_egfr" DataType="float" SignificantDigits="0">
+      <ItemDef OID="Item.bl_egfr" Name="bl_egfr" DataType="float" redcap:Variable="bl_egfr" redcap:FieldType="text" redcap:RequiredField="y" redcap:TextValidationType="number" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">eGFR (mL/min/1.73m^2)</TranslatedText>
         </Question>
@@ -258,14 +258,14 @@
         <redcap:FieldNote>+2 points if &lt;45</redcap:FieldNote>
         <redcap:FormName>baseline</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.bl_np_type" Name="bl_np_type" DataType="integer">
+      <ItemDef OID="Item.bl_np_type" Name="bl_np_type" DataType="integer" redcap:Variable="bl_np_type" redcap:FieldType="radio">
         <Question>
           <TranslatedText xml:lang="en">Natriuretic peptide assay used</TranslatedText>
         </Question>
         <CodeListRef CodeListOID="CL.bl_np_type"/>
         <redcap:FormName>baseline</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.bl_np_value" Name="bl_np_value" DataType="float" SignificantDigits="0">
+      <ItemDef OID="Item.bl_np_value" Name="bl_np_value" DataType="float" redcap:Variable="bl_np_value" redcap:FieldType="text" redcap:TextValidationType="number" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">Natriuretic peptide value (pg/mL)</TranslatedText>
         </Question>
@@ -276,7 +276,7 @@
         <redcap:FieldNote>+2 if BNP &gt;=500 or NT-proBNP &gt;=1500</redcap:FieldNote>
         <redcap:FormName>baseline</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.bl_sbp_admit" Name="bl_sbp_admit" DataType="integer" SignificantDigits="0">
+      <ItemDef OID="Item.bl_sbp_admit" Name="bl_sbp_admit" DataType="integer" redcap:Variable="bl_sbp_admit" redcap:FieldType="text" redcap:RequiredField="y" redcap:TextValidationType="integer" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">Admission systolic BP (mmHg)</TranslatedText>
         </Question>
@@ -286,7 +286,7 @@
         <redcap:FieldNote>+2 points if &lt;100</redcap:FieldNote>
         <redcap:FormName>baseline</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.bl_diabetes" Name="bl_diabetes" DataType="integer">
+      <ItemDef OID="Item.bl_diabetes" Name="bl_diabetes" DataType="integer" redcap:Variable="bl_diabetes" redcap:FieldType="yesno" redcap:RequiredField="y">
         <Question>
           <TranslatedText xml:lang="en">Diabetes mellitus</TranslatedText>
         </Question>
@@ -294,7 +294,7 @@
         <redcap:FieldNote>+1 point if Yes</redcap:FieldNote>
         <redcap:FormName>baseline</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.bl_ckm_stage" Name="bl_ckm_stage" DataType="integer">
+      <ItemDef OID="Item.bl_ckm_stage" Name="bl_ckm_stage" DataType="integer" redcap:Variable="bl_ckm_stage" redcap:FieldType="radio" redcap:RequiredField="y">
         <Question>
           <TranslatedText xml:lang="en">CKM syndrome stage (AHA 2023)</TranslatedText>
         </Question>
@@ -302,7 +302,7 @@
         <redcap:FieldNote>+2 points if Stage 3 or 4</redcap:FieldNote>
         <redcap:FormName>baseline</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.bl_distance_cardio_mi" Name="bl_distance_cardio_mi" DataType="integer" SignificantDigits="0">
+      <ItemDef OID="Item.bl_distance_cardio_mi" Name="bl_distance_cardio_mi" DataType="integer" redcap:Variable="bl_distance_cardio_mi" redcap:FieldType="text" redcap:RequiredField="y" redcap:TextValidationType="integer" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">Distance to nearest cardiologist (miles)</TranslatedText>
         </Question>
@@ -312,7 +312,7 @@
         <redcap:FieldNote>+1 point if &gt;50</redcap:FieldNote>
         <redcap:FormName>baseline</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.bl_social_support_limited" Name="bl_social_support_limited" DataType="integer">
+      <ItemDef OID="Item.bl_social_support_limited" Name="bl_social_support_limited" DataType="integer" redcap:Variable="bl_social_support_limited" redcap:FieldType="yesno" redcap:RequiredField="y">
         <Question>
           <TranslatedText xml:lang="en">Lives alone OR limited social support</TranslatedText>
         </Question>
@@ -320,7 +320,7 @@
         <redcap:FieldNote>+1 point if Yes (single-item proxy for ENRICHD)</redcap:FieldNote>
         <redcap:FormName>baseline</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.bl_enrichd_score" Name="bl_enrichd_score" DataType="integer" SignificantDigits="0">
+      <ItemDef OID="Item.bl_enrichd_score" Name="bl_enrichd_score" DataType="integer" redcap:Variable="bl_enrichd_score" redcap:FieldType="text" redcap:TextValidationType="integer" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">ENRICHD Social Support Scale total (optional)</TranslatedText>
         </Question>
@@ -330,7 +330,7 @@
         <redcap:FieldNote>7-35; &lt;=19 suggests limited support</redcap:FieldNote>
         <redcap:FormName>baseline</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.bl_risk_score" Name="bl_risk_score" DataType="float">
+      <ItemDef OID="Item.bl_risk_score" Name="bl_risk_score" DataType="float" redcap:Variable="bl_risk_score" redcap:FieldType="calc">
         <Question>
           <TranslatedText xml:lang="en">HEARTLAND risk score (0-18)</TranslatedText>
         </Question>
@@ -338,7 +338,7 @@
         <redcap:SectionHeader>Calculated HEARTLAND Risk</redcap:SectionHeader>
         <redcap:FormName>baseline</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.bl_risk_tier" Name="bl_risk_tier" DataType="text">
+      <ItemDef OID="Item.bl_risk_tier" Name="bl_risk_tier" DataType="text" redcap:Variable="bl_risk_tier" redcap:FieldType="text">
         <Question>
           <TranslatedText xml:lang="en">HEARTLAND risk tier</TranslatedText>
         </Question>
@@ -346,7 +346,7 @@
         <redcap:FieldNote>Calculated text field</redcap:FieldNote>
         <redcap:FormName>baseline</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.bl_pro_consent" Name="bl_pro_consent" DataType="integer">
+      <ItemDef OID="Item.bl_pro_consent" Name="bl_pro_consent" DataType="integer" redcap:Variable="bl_pro_consent" redcap:FieldType="yesno" redcap:RequiredField="y">
         <Question>
           <TranslatedText xml:lang="en">Consent to complete KCCQ-12 at baseline and 12 months</TranslatedText>
         </Question>
@@ -355,7 +355,7 @@
         <redcap:FieldNote>Gates KCCQ-12 fields</redcap:FieldNote>
         <redcap:FormName>baseline</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_arni_acei_arb_drug" Name="gdmt_arni_acei_arb_drug" DataType="integer">
+      <ItemDef OID="Item.gdmt_arni_acei_arb_drug" Name="gdmt_arni_acei_arb_drug" DataType="integer" redcap:Variable="gdmt_arni_acei_arb_drug" redcap:FieldType="dropdown">
         <Question>
           <TranslatedText xml:lang="en">RAS inhibitor drug</TranslatedText>
         </Question>
@@ -363,7 +363,7 @@
         <redcap:SectionHeader>Renin-Angiotensin-System inhibitor</redcap:SectionHeader>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_arni_acei_arb_dose" Name="gdmt_arni_acei_arb_dose" DataType="float" SignificantDigits="0">
+      <ItemDef OID="Item.gdmt_arni_acei_arb_dose" Name="gdmt_arni_acei_arb_dose" DataType="float" redcap:Variable="gdmt_arni_acei_arb_dose" redcap:FieldType="text" redcap:TextValidationType="number" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">RAS inhibitor total daily dose (mg)</TranslatedText>
         </Question>
@@ -373,7 +373,7 @@
         <redcap:BranchingLogic>[gdmt_arni_acei_arb_drug] &lt;&gt; "0"</redcap:BranchingLogic>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_arni_acei_arb_target" Name="gdmt_arni_acei_arb_target" DataType="float" SignificantDigits="0">
+      <ItemDef OID="Item.gdmt_arni_acei_arb_target" Name="gdmt_arni_acei_arb_target" DataType="float" redcap:Variable="gdmt_arni_acei_arb_target" redcap:FieldType="text" redcap:TextValidationType="number" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">RAS inhibitor target dose (mg)</TranslatedText>
         </Question>
@@ -384,14 +384,14 @@
         <redcap:FieldNote>Per protocol e.g. sacubitril/valsartan 97/103 BID = 200/day</redcap:FieldNote>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_arni_acei_arb_start" Name="gdmt_arni_acei_arb_start" DataType="date">
+      <ItemDef OID="Item.gdmt_arni_acei_arb_start" Name="gdmt_arni_acei_arb_start" DataType="date" redcap:Variable="gdmt_arni_acei_arb_start" redcap:FieldType="text" redcap:Identifier="y" redcap:TextValidationType="date_ymd">
         <Question>
           <TranslatedText xml:lang="en">Date RAS inhibitor started</TranslatedText>
         </Question>
         <redcap:BranchingLogic>[gdmt_arni_acei_arb_drug] &lt;&gt; "0"</redcap:BranchingLogic>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_bb_drug" Name="gdmt_bb_drug" DataType="integer">
+      <ItemDef OID="Item.gdmt_bb_drug" Name="gdmt_bb_drug" DataType="integer" redcap:Variable="gdmt_bb_drug" redcap:FieldType="dropdown">
         <Question>
           <TranslatedText xml:lang="en">Beta-blocker drug</TranslatedText>
         </Question>
@@ -399,7 +399,7 @@
         <redcap:SectionHeader>Beta-blocker</redcap:SectionHeader>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_bb_dose" Name="gdmt_bb_dose" DataType="float" SignificantDigits="0">
+      <ItemDef OID="Item.gdmt_bb_dose" Name="gdmt_bb_dose" DataType="float" redcap:Variable="gdmt_bb_dose" redcap:FieldType="text" redcap:TextValidationType="number" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">Beta-blocker total daily dose (mg)</TranslatedText>
         </Question>
@@ -409,7 +409,7 @@
         <redcap:BranchingLogic>[gdmt_bb_drug] &lt;&gt; "0"</redcap:BranchingLogic>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_bb_target" Name="gdmt_bb_target" DataType="float" SignificantDigits="0">
+      <ItemDef OID="Item.gdmt_bb_target" Name="gdmt_bb_target" DataType="float" redcap:Variable="gdmt_bb_target" redcap:FieldType="text" redcap:TextValidationType="number" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">Beta-blocker target dose (mg)</TranslatedText>
         </Question>
@@ -420,14 +420,14 @@
         <redcap:FieldNote>e.g., carvedilol 50 mg/day</redcap:FieldNote>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_bb_start" Name="gdmt_bb_start" DataType="date">
+      <ItemDef OID="Item.gdmt_bb_start" Name="gdmt_bb_start" DataType="date" redcap:Variable="gdmt_bb_start" redcap:FieldType="text" redcap:Identifier="y" redcap:TextValidationType="date_ymd">
         <Question>
           <TranslatedText xml:lang="en">Date beta-blocker started</TranslatedText>
         </Question>
         <redcap:BranchingLogic>[gdmt_bb_drug] &lt;&gt; "0"</redcap:BranchingLogic>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_mra_drug" Name="gdmt_mra_drug" DataType="integer">
+      <ItemDef OID="Item.gdmt_mra_drug" Name="gdmt_mra_drug" DataType="integer" redcap:Variable="gdmt_mra_drug" redcap:FieldType="dropdown">
         <Question>
           <TranslatedText xml:lang="en">MRA drug</TranslatedText>
         </Question>
@@ -435,7 +435,7 @@
         <redcap:SectionHeader>Mineralocorticoid Receptor Antagonist</redcap:SectionHeader>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_mra_dose" Name="gdmt_mra_dose" DataType="float" SignificantDigits="0">
+      <ItemDef OID="Item.gdmt_mra_dose" Name="gdmt_mra_dose" DataType="float" redcap:Variable="gdmt_mra_dose" redcap:FieldType="text" redcap:TextValidationType="number" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">MRA total daily dose (mg)</TranslatedText>
         </Question>
@@ -445,7 +445,7 @@
         <redcap:BranchingLogic>[gdmt_mra_drug] &lt;&gt; "0"</redcap:BranchingLogic>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_mra_target" Name="gdmt_mra_target" DataType="float" SignificantDigits="0">
+      <ItemDef OID="Item.gdmt_mra_target" Name="gdmt_mra_target" DataType="float" redcap:Variable="gdmt_mra_target" redcap:FieldType="text" redcap:TextValidationType="number" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">MRA target dose (mg)</TranslatedText>
         </Question>
@@ -456,14 +456,14 @@
         <redcap:FieldNote>e.g., spironolactone 25-50 mg/day</redcap:FieldNote>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_mra_start" Name="gdmt_mra_start" DataType="date">
+      <ItemDef OID="Item.gdmt_mra_start" Name="gdmt_mra_start" DataType="date" redcap:Variable="gdmt_mra_start" redcap:FieldType="text" redcap:Identifier="y" redcap:TextValidationType="date_ymd">
         <Question>
           <TranslatedText xml:lang="en">Date MRA started</TranslatedText>
         </Question>
         <redcap:BranchingLogic>[gdmt_mra_drug] &lt;&gt; "0"</redcap:BranchingLogic>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_sglt2_drug" Name="gdmt_sglt2_drug" DataType="integer">
+      <ItemDef OID="Item.gdmt_sglt2_drug" Name="gdmt_sglt2_drug" DataType="integer" redcap:Variable="gdmt_sglt2_drug" redcap:FieldType="dropdown">
         <Question>
           <TranslatedText xml:lang="en">SGLT2i drug</TranslatedText>
         </Question>
@@ -471,7 +471,7 @@
         <redcap:SectionHeader>SGLT2 inhibitor</redcap:SectionHeader>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_sglt2_dose" Name="gdmt_sglt2_dose" DataType="float" SignificantDigits="0">
+      <ItemDef OID="Item.gdmt_sglt2_dose" Name="gdmt_sglt2_dose" DataType="float" redcap:Variable="gdmt_sglt2_dose" redcap:FieldType="text" redcap:TextValidationType="number" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">SGLT2i dose (mg)</TranslatedText>
         </Question>
@@ -481,14 +481,14 @@
         <redcap:BranchingLogic>[gdmt_sglt2_drug] &lt;&gt; "0"</redcap:BranchingLogic>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_sglt2_start" Name="gdmt_sglt2_start" DataType="date">
+      <ItemDef OID="Item.gdmt_sglt2_start" Name="gdmt_sglt2_start" DataType="date" redcap:Variable="gdmt_sglt2_start" redcap:FieldType="text" redcap:Identifier="y" redcap:TextValidationType="date_ymd">
         <Question>
           <TranslatedText xml:lang="en">Date SGLT2i started</TranslatedText>
         </Question>
         <redcap:BranchingLogic>[gdmt_sglt2_drug] &lt;&gt; "0"</redcap:BranchingLogic>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_hfpef_glp1" Name="gdmt_hfpef_glp1" DataType="integer">
+      <ItemDef OID="Item.gdmt_hfpef_glp1" Name="gdmt_hfpef_glp1" DataType="integer" redcap:Variable="gdmt_hfpef_glp1" redcap:FieldType="yesno">
         <Question>
           <TranslatedText xml:lang="en">GLP-1 RA prescribed (e.g., semaglutide)</TranslatedText>
         </Question>
@@ -498,7 +498,7 @@
         <redcap:FieldNote>STEP-HFpEF indication if BMI &gt;=30</redcap:FieldNote>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_classes_count" Name="gdmt_classes_count" DataType="float">
+      <ItemDef OID="Item.gdmt_classes_count" Name="gdmt_classes_count" DataType="float" redcap:Variable="gdmt_classes_count" redcap:FieldType="calc">
         <Question>
           <TranslatedText xml:lang="en">GDMT classes on board (0-4)</TranslatedText>
         </Question>
@@ -506,7 +506,7 @@
         <redcap:SectionHeader>Summary</redcap:SectionHeader>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_generic_bridge" Name="gdmt_generic_bridge" DataType="integer">
+      <ItemDef OID="Item.gdmt_generic_bridge" Name="gdmt_generic_bridge" DataType="integer" redcap:Variable="gdmt_generic_bridge" redcap:FieldType="yesno">
         <Question>
           <TranslatedText xml:lang="en">Using generic $4 bridge regimen</TranslatedText>
         </Question>
@@ -514,14 +514,14 @@
         <redcap:FieldNote>ACE-I + BB + spironolactone generic combination</redcap:FieldNote>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.gdmt_init_tier" Name="gdmt_init_tier" DataType="integer">
+      <ItemDef OID="Item.gdmt_init_tier" Name="gdmt_init_tier" DataType="integer" redcap:Variable="gdmt_init_tier" redcap:FieldType="radio">
         <Question>
           <TranslatedText xml:lang="en">Initiation strategy</TranslatedText>
         </Question>
         <CodeListRef CodeListOID="CL.gdmt_init_tier"/>
         <redcap:FormName>gdmt_status</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_event_number" Name="mo_event_number" DataType="integer">
+      <ItemDef OID="Item.mo_event_number" Name="mo_event_number" DataType="integer" redcap:Variable="mo_event_number" redcap:FieldType="dropdown" redcap:RequiredField="y">
         <Question>
           <TranslatedText xml:lang="en">Follow-up month</TranslatedText>
         </Question>
@@ -529,13 +529,13 @@
         <redcap:SectionHeader>Monthly follow-up (repeating instrument)</redcap:SectionHeader>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_date" Name="mo_date" DataType="date">
+      <ItemDef OID="Item.mo_date" Name="mo_date" DataType="date" redcap:Variable="mo_date" redcap:FieldType="text" redcap:Identifier="y" redcap:RequiredField="y" redcap:TextValidationType="date_ymd">
         <Question>
           <TranslatedText xml:lang="en">Follow-up visit date</TranslatedText>
         </Question>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_track" Name="mo_track" DataType="integer">
+      <ItemDef OID="Item.mo_track" Name="mo_track" DataType="integer" redcap:Variable="mo_track" redcap:FieldType="radio" redcap:RequiredField="y">
         <Question>
           <TranslatedText xml:lang="en">Monitoring track</TranslatedText>
         </Question>
@@ -543,7 +543,7 @@
         <redcap:FieldNote>Track A = Bluetooth/app ; Track B = paper diary + phone</redcap:FieldNote>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_weight_lb" Name="mo_weight_lb" DataType="float" SignificantDigits="0">
+      <ItemDef OID="Item.mo_weight_lb" Name="mo_weight_lb" DataType="float" redcap:Variable="mo_weight_lb" redcap:FieldType="text" redcap:TextValidationType="number" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">Weight (lb)</TranslatedText>
         </Question>
@@ -553,7 +553,7 @@
         <redcap:SectionHeader>Vitals</redcap:SectionHeader>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_sbp" Name="mo_sbp" DataType="integer" SignificantDigits="0">
+      <ItemDef OID="Item.mo_sbp" Name="mo_sbp" DataType="integer" redcap:Variable="mo_sbp" redcap:FieldType="text" redcap:TextValidationType="integer" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">Systolic BP (mmHg)</TranslatedText>
         </Question>
@@ -562,7 +562,7 @@
         </RangeCheck>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_dbp" Name="mo_dbp" DataType="integer" SignificantDigits="0">
+      <ItemDef OID="Item.mo_dbp" Name="mo_dbp" DataType="integer" redcap:Variable="mo_dbp" redcap:FieldType="text" redcap:TextValidationType="integer" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">Diastolic BP (mmHg)</TranslatedText>
         </Question>
@@ -571,7 +571,7 @@
         </RangeCheck>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_hr" Name="mo_hr" DataType="integer" SignificantDigits="0">
+      <ItemDef OID="Item.mo_hr" Name="mo_hr" DataType="integer" redcap:Variable="mo_hr" redcap:FieldType="text" redcap:TextValidationType="integer" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">Heart rate (bpm)</TranslatedText>
         </Question>
@@ -580,7 +580,7 @@
         </RangeCheck>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_spo2" Name="mo_spo2" DataType="integer" SignificantDigits="0">
+      <ItemDef OID="Item.mo_spo2" Name="mo_spo2" DataType="integer" redcap:Variable="mo_spo2" redcap:FieldType="text" redcap:TextValidationType="integer" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">SpO2 (%)</TranslatedText>
         </Question>
@@ -589,7 +589,7 @@
         </RangeCheck>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_egfr" Name="mo_egfr" DataType="float" SignificantDigits="0">
+      <ItemDef OID="Item.mo_egfr" Name="mo_egfr" DataType="float" redcap:Variable="mo_egfr" redcap:FieldType="text" redcap:TextValidationType="number" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">eGFR (mL/min/1.73m^2)</TranslatedText>
         </Question>
@@ -600,7 +600,7 @@
         <redcap:FieldNote>Optional</redcap:FieldNote>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_k" Name="mo_k" DataType="float" SignificantDigits="0">
+      <ItemDef OID="Item.mo_k" Name="mo_k" DataType="float" redcap:Variable="mo_k" redcap:FieldType="text" redcap:TextValidationType="number" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">Potassium (mEq/L)</TranslatedText>
         </Question>
@@ -610,7 +610,7 @@
         <redcap:FieldNote>Optional</redcap:FieldNote>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_bnp" Name="mo_bnp" DataType="float" SignificantDigits="0">
+      <ItemDef OID="Item.mo_bnp" Name="mo_bnp" DataType="float" redcap:Variable="mo_bnp" redcap:FieldType="text" redcap:TextValidationType="number" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">BNP or NT-proBNP (pg/mL)</TranslatedText>
         </Question>
@@ -620,7 +620,7 @@
         <redcap:FieldNote>Optional; quarterly if available</redcap:FieldNote>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_gdmt_change" Name="mo_gdmt_change" DataType="integer">
+      <ItemDef OID="Item.mo_gdmt_change" Name="mo_gdmt_change" DataType="integer" redcap:Variable="mo_gdmt_change" redcap:FieldType="yesno">
         <Question>
           <TranslatedText xml:lang="en">Any GDMT change this month</TranslatedText>
         </Question>
@@ -629,7 +629,7 @@
         <redcap:FieldNote>Titration, discontinuation, new agent</redcap:FieldNote>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_gdmt_change_notes" Name="mo_gdmt_change_notes" DataType="text">
+      <ItemDef OID="Item.mo_gdmt_change_notes" Name="mo_gdmt_change_notes" DataType="text" redcap:Variable="mo_gdmt_change_notes" redcap:FieldType="notes">
         <Question>
           <TranslatedText xml:lang="en">GDMT change details</TranslatedText>
         </Question>
@@ -637,7 +637,7 @@
         <redcap:FieldNote>Drug, dose, reason</redcap:FieldNote>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_red_flag_count" Name="mo_red_flag_count" DataType="integer" SignificantDigits="0">
+      <ItemDef OID="Item.mo_red_flag_count" Name="mo_red_flag_count" DataType="integer" redcap:Variable="mo_red_flag_count" redcap:FieldType="text" redcap:TextValidationType="integer" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">Red-flag events this month (count)</TranslatedText>
         </Question>
@@ -647,7 +647,7 @@
         <redcap:FieldNote>Weight gain &gt;=5 lb/wk, worsening dyspnea, syncope, etc.</redcap:FieldNote>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_red_flag_types" Name="mo_red_flag_types" DataType="boolean">
+      <ItemDef OID="Item.mo_red_flag_types" Name="mo_red_flag_types" DataType="boolean" redcap:Variable="mo_red_flag_types" redcap:FieldType="checkbox">
         <Question>
           <TranslatedText xml:lang="en">Red-flag event types</TranslatedText>
         </Question>
@@ -655,14 +655,14 @@
         <redcap:BranchingLogic>[mo_red_flag_count] &gt; 0</redcap:BranchingLogic>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_hosp_any" Name="mo_hosp_any" DataType="integer">
+      <ItemDef OID="Item.mo_hosp_any" Name="mo_hosp_any" DataType="integer" redcap:Variable="mo_hosp_any" redcap:FieldType="yesno">
         <Question>
           <TranslatedText xml:lang="en">Any hospitalization this month</TranslatedText>
         </Question>
         <CodeListRef CodeListOID="CL.yesno"/>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_hosp_hf" Name="mo_hosp_hf" DataType="integer">
+      <ItemDef OID="Item.mo_hosp_hf" Name="mo_hosp_hf" DataType="integer" redcap:Variable="mo_hosp_hf" redcap:FieldType="yesno">
         <Question>
           <TranslatedText xml:lang="en">HF-related hospitalization</TranslatedText>
         </Question>
@@ -670,14 +670,14 @@
         <redcap:BranchingLogic>[mo_hosp_any] = "1"</redcap:BranchingLogic>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_ed_any" Name="mo_ed_any" DataType="integer">
+      <ItemDef OID="Item.mo_ed_any" Name="mo_ed_any" DataType="integer" redcap:Variable="mo_ed_any" redcap:FieldType="yesno">
         <Question>
           <TranslatedText xml:lang="en">Any ED visit this month</TranslatedText>
         </Question>
         <CodeListRef CodeListOID="CL.yesno"/>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_ed_hf" Name="mo_ed_hf" DataType="integer">
+      <ItemDef OID="Item.mo_ed_hf" Name="mo_ed_hf" DataType="integer" redcap:Variable="mo_ed_hf" redcap:FieldType="yesno">
         <Question>
           <TranslatedText xml:lang="en">HF-related ED visit</TranslatedText>
         </Question>
@@ -685,7 +685,7 @@
         <redcap:BranchingLogic>[mo_ed_any] = "1"</redcap:BranchingLogic>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.mo_kccq12_score" Name="mo_kccq12_score" DataType="integer" SignificantDigits="0">
+      <ItemDef OID="Item.mo_kccq12_score" Name="mo_kccq12_score" DataType="integer" redcap:Variable="mo_kccq12_score" redcap:FieldType="text" redcap:TextValidationType="integer" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">KCCQ-12 summary score (0-100)</TranslatedText>
         </Question>
@@ -697,7 +697,7 @@
         <redcap:FieldNote>Higher = better health status</redcap:FieldNote>
         <redcap:FormName>monthly_followup</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.out_vital_status" Name="out_vital_status" DataType="integer">
+      <ItemDef OID="Item.out_vital_status" Name="out_vital_status" DataType="integer" redcap:Variable="out_vital_status" redcap:FieldType="radio" redcap:RequiredField="y">
         <Question>
           <TranslatedText xml:lang="en">Vital status at 12 months</TranslatedText>
         </Question>
@@ -705,14 +705,14 @@
         <redcap:SectionHeader>12-month outcomes</redcap:SectionHeader>
         <redcap:FormName>outcomes_12mo</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.out_death_date" Name="out_death_date" DataType="date">
+      <ItemDef OID="Item.out_death_date" Name="out_death_date" DataType="date" redcap:Variable="out_death_date" redcap:FieldType="text" redcap:Identifier="y" redcap:TextValidationType="date_ymd">
         <Question>
           <TranslatedText xml:lang="en">Date of death</TranslatedText>
         </Question>
         <redcap:BranchingLogic>[out_vital_status] = "2"</redcap:BranchingLogic>
         <redcap:FormName>outcomes_12mo</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.out_death_cardiovascular" Name="out_death_cardiovascular" DataType="integer">
+      <ItemDef OID="Item.out_death_cardiovascular" Name="out_death_cardiovascular" DataType="integer" redcap:Variable="out_death_cardiovascular" redcap:FieldType="yesno">
         <Question>
           <TranslatedText xml:lang="en">Cardiovascular cause of death</TranslatedText>
         </Question>
@@ -720,7 +720,7 @@
         <redcap:BranchingLogic>[out_vital_status] = "2"</redcap:BranchingLogic>
         <redcap:FormName>outcomes_12mo</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.out_hf_hosp_count" Name="out_hf_hosp_count" DataType="integer" SignificantDigits="0">
+      <ItemDef OID="Item.out_hf_hosp_count" Name="out_hf_hosp_count" DataType="integer" redcap:Variable="out_hf_hosp_count" redcap:FieldType="text" redcap:RequiredField="y" redcap:TextValidationType="integer" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">HF hospitalizations (12-month total)</TranslatedText>
         </Question>
@@ -729,7 +729,7 @@
         </RangeCheck>
         <redcap:FormName>outcomes_12mo</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.out_hf_ed_count" Name="out_hf_ed_count" DataType="integer" SignificantDigits="0">
+      <ItemDef OID="Item.out_hf_ed_count" Name="out_hf_ed_count" DataType="integer" redcap:Variable="out_hf_ed_count" redcap:FieldType="text" redcap:RequiredField="y" redcap:TextValidationType="integer" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">HF ED visits (12-month total)</TranslatedText>
         </Question>
@@ -738,7 +738,7 @@
         </RangeCheck>
         <redcap:FormName>outcomes_12mo</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.out_days_alive_oh" Name="out_days_alive_oh" DataType="integer" SignificantDigits="0">
+      <ItemDef OID="Item.out_days_alive_oh" Name="out_days_alive_oh" DataType="integer" redcap:Variable="out_days_alive_oh" redcap:FieldType="text" redcap:RequiredField="y" redcap:TextValidationType="integer" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">Days alive and out of hospital (0-365)</TranslatedText>
         </Question>
@@ -747,14 +747,14 @@
         </RangeCheck>
         <redcap:FormName>outcomes_12mo</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.out_gdmt_optimized" Name="out_gdmt_optimized" DataType="integer">
+      <ItemDef OID="Item.out_gdmt_optimized" Name="out_gdmt_optimized" DataType="integer" redcap:Variable="out_gdmt_optimized" redcap:FieldType="yesno">
         <Question>
           <TranslatedText xml:lang="en">&gt;=3 GDMT classes at target dose at 12 months</TranslatedText>
         </Question>
         <CodeListRef CodeListOID="CL.yesno"/>
         <redcap:FormName>outcomes_12mo</redcap:FormName>
       </ItemDef>
-      <ItemDef OID="Item.out_kccq12_12mo" Name="out_kccq12_12mo" DataType="integer" SignificantDigits="0">
+      <ItemDef OID="Item.out_kccq12_12mo" Name="out_kccq12_12mo" DataType="integer" redcap:Variable="out_kccq12_12mo" redcap:FieldType="text" redcap:TextValidationType="integer" SignificantDigits="0">
         <Question>
           <TranslatedText xml:lang="en">KCCQ-12 score at 12 months</TranslatedText>
         </Question>

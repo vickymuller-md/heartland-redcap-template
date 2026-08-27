@@ -137,7 +137,7 @@ Time-to-event for all-cause mortality by HEARTLAND tier. Kaplan-Meier curves wit
 
 # 10. References
 
-- HEARTLAND Protocol v3.3 (Cureus 2026; Zenodo DOI 10.5281/zenodo.18566403).
+- HEARTLAND Protocol v3.3 (Cureus 2026; DOI 10.7759/cureus.104817; current Zenodo deposit 10.5281/zenodo.19101219).
 - Pocock SJ et al. *Predicting survival in heart failure: a risk score based on 39,372 patients from 30 studies* (MAGGIC). Eur Heart J. 2013;34:1404-1413.
 - Peterson PN et al. *A validated risk score for in-hospital mortality in patients with heart failure from the American Heart Association Get With The Guidelines-Heart Failure program.* Circ Cardiovasc Qual Outcomes. 2010;3:25-32.
 - Mebazaa A et al. *STRONG-HF: Safety, tolerability and efficacy of up-titration of GDMT for acute heart failure.* Lancet. 2022;400:1938-1952.

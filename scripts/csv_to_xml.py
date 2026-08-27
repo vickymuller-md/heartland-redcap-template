@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import re
 import sys
 from pathlib import Path
 from xml.etree import ElementTree as ET
@@ -55,29 +56,33 @@ def parse_choices(raw: str) -> list[tuple[str, str]]:
     return out
 
 
-def build_xml(rows: list[dict]) -> ET.Element:
+def oid_fragment(value: str) -> str:
+    return re.sub(r"[^A-Za-z0-9_.-]+", "_", value).strip("_") or "heartland"
+
+
+def build_xml(rows: list[dict], *, version: str, study_name: str) -> ET.Element:
     ET.register_namespace("", ODM_NS)
     ET.register_namespace("redcap", RC_NS)
 
     odm = ET.Element(f"{{{ODM_NS}}}ODM", {
         "FileType": "Snapshot",
-        "FileOID": "heartland_redcap_template_v1",
+        "FileOID": f"{oid_fragment(study_name)}_v{oid_fragment(version)}",
         "Granularity": "Metadata",
-        "CreationDateTime": "2026-04-16T00:00:00",
+        "CreationDateTime": "2026-08-27T00:00:00",
         "SourceSystem": "HEARTLAND REDCap template generator",
         "ODMVersion": "1.3.2",
     })
-    study = ET.SubElement(odm, f"{{{ODM_NS}}}Study", {"OID": "heartland_study"})
+    study = ET.SubElement(odm, f"{{{ODM_NS}}}Study", {"OID": f"Study.{oid_fragment(study_name)}"})
     gv = ET.SubElement(study, f"{{{ODM_NS}}}GlobalVariables")
-    ET.SubElement(gv, f"{{{ODM_NS}}}StudyName").text = "HEARTLAND Protocol REDCap Template"
+    ET.SubElement(gv, f"{{{ODM_NS}}}StudyName").text = study_name
     ET.SubElement(gv, f"{{{ODM_NS}}}StudyDescription").text = (
-        "Pre-built REDCap instrument for HEARTLAND Protocol v3.3 data collection."
+        "Open REDCap instrument for HEARTLAND Protocol research data collection."
     )
     ET.SubElement(gv, f"{{{ODM_NS}}}ProtocolName").text = "HEARTLAND v3.3"
 
     mdv = ET.SubElement(study, f"{{{ODM_NS}}}MetaDataVersion", {
-        "OID": "Metadata.1",
-        "Name": "HEARTLAND v1.0.0",
+        "OID": f"Metadata.{oid_fragment(version)}",
+        "Name": f"{study_name} v{version}",
     })
 
     # Group rows by form
@@ -137,7 +142,15 @@ def build_xml(rows: list[dict]) -> ET.Element:
             "OID": f"Item.{r['var']}",
             "Name": r["var"],
             "DataType": datatype,
+            f"{{{RC_NS}}}Variable": r["var"],
+            f"{{{RC_NS}}}FieldType": r["field_type"],
         }
+        if r["identifier"].lower() == "y":
+            attrs[f"{{{RC_NS}}}Identifier"] = "y"
+        if r["required"].lower() == "y":
+            attrs[f"{{{RC_NS}}}RequiredField"] = "y"
+        if r["val_type"]:
+            attrs[f"{{{RC_NS}}}TextValidationType"] = r["val_type"]
         if r["val_min"]:
             attrs["SignificantDigits"] = "0"  # purely cosmetic
         item = ET.SubElement(mdv, f"{{{ODM_NS}}}ItemDef", attrs)
@@ -202,6 +215,8 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--input", required=True, type=Path)
     ap.add_argument("--output", required=True, type=Path)
+    ap.add_argument("--version", default="1.0.1")
+    ap.add_argument("--study-name", default="HEARTLAND Protocol REDCap Template")
     args = ap.parse_args()
 
     with args.input.open() as fh:
@@ -230,7 +245,7 @@ def main() -> int:
                 "annotation": r[17],
             })
 
-    tree = build_xml(rows)
+    tree = build_xml(rows, version=args.version, study_name=args.study_name)
     pretty = minidom.parseString(ET.tostring(tree, encoding="unicode")).toprettyxml(indent="  ")
     args.output.write_text(pretty, encoding="utf-8")
     print(f"Wrote {args.output} ({len(rows)} items across {len({r['form'] for r in rows})} forms)")

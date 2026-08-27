@@ -3,7 +3,8 @@ title: HEARTLAND Protocol REDCap Instrument Template
 message: >-
   If you use this template, please cite both the template
   (this repository) and the underlying HEARTLAND Protocol
-  v3.3 (Cureus 2026; DOI 10.5281/zenodo.18566403).
+  v3.3 (Cureus 2026; DOI 10.7759/cureus.104817;
+  current Zenodo deposit 10.5281/zenodo.19101219).
 type: dataset
 authors:
   - family-names: Ferreira
@@ -32,5 +33,5 @@ keywords:
   - risk stratification
   - HEARTLAND Protocol
 license: MIT
-version: 1.0.0
-date-released: "2026-04-16"
+version: 1.0.1
+date-released: "2026-08-27"

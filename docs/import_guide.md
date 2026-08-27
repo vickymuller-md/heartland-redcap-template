@@ -1,4 +1,4 @@
-# REDCap Import Guide — HEARTLAND Template v1.0.0
+# REDCap Import Guide - HEARTLAND Template v1.0.1
 
 This guide shows how to load the HEARTLAND Protocol instrument set into any REDCap instance (version 14.x or later). Choose **Path A (CSV)** or **Path B (XML)** depending on how your institution prefers to provision new projects. Both paths produce an equivalent set of forms.
 
@@ -86,8 +86,8 @@ For protocol-level customization (e.g. a research-only subset of variables), see
 ## Citing this template
 
 ```
-Ferreira VM. HEARTLAND Protocol REDCap Instrument Template, v1.0.0. 2026.
-  Zenodo. DOI: 10.5281/zenodo.<to-be-minted-on-release>.
+Ferreira VM. HEARTLAND Protocol REDCap Instrument Template, v1.0.1. 2026.
+  Zenodo. DOI: 10.5281/zenodo.19635000.
 ```
 
 ## Support

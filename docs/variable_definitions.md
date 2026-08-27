@@ -1,8 +1,8 @@
 ---
 title: "HEARTLAND Protocol — REDCap Variable Definitions"
-subtitle: "Codebook for `heartland_data_dictionary.csv` (v1.0.0)"
+subtitle: "Codebook for `heartland_data_dictionary.csv` (v1.0.1)"
 author: "Vicky Muller Ferreira, MD"
-date: "2026-04-16"
+date: "2026-08-27"
 ---
 
 # Overview
@@ -11,7 +11,7 @@ This codebook documents every field in the HEARTLAND REDCap instrument template.
 
 Companion file: `instruments/heartland_data_dictionary.csv` — the machine-readable data dictionary that produces this codebook.
 
-Cutoffs and weighted points for the HEARTLAND Risk Score reproduce **Table 1 of Protocol v3.3** (Zenodo DOI 10.5281/zenodo.18566403; published in *Cureus* 2026).
+Cutoffs and weighted points for the HEARTLAND Risk Score reproduce **Table 1 of Protocol v3.3** (*Cureus* 2026; DOI 10.7759/cureus.104817; current Zenodo deposit 10.5281/zenodo.19101219).
 
 ---
 
@@ -118,7 +118,7 @@ Dapagliflozin 10 mg or empagliflozin 10 mg (no titration). Safety gate: eGFR >20
 - `mo_hosp_any`, `mo_hosp_hf` (gated on any=Y), `mo_ed_any`, `mo_ed_hf` (gated on any=Y).
 
 ## Patient-reported outcomes (consent-gated)
-`mo_kccq12_score` (0-100): KCCQ-12 summary. Shown only when `bl_pro_consent = Yes`.
+`mo_kccq12_score` (0-100): site-computed KCCQ-12 summary score. Shown only when `bl_pro_consent = Yes`. The template does not reproduce KCCQ-12 questions or scoring instructions; sites must obtain and administer any required licensed instrument separately.
 
 ---
 
@@ -165,14 +165,15 @@ Dapagliflozin 10 mg or empagliflozin 10 mg (no titration). Safety gate: eGFR >20
 
 # Data-integrity notes
 
-- Field names follow REDCap conventions (lowercase, underscores, ≤26 chars).
+- Field names follow REDCap conventions (lowercase, underscores, <=26 chars).
+- All eight full-date fields and `facility_name` are marked as identifiers in the REDCap data dictionary; local sites remain responsible for their own HIPAA/IRB privacy configuration.
 - The `record_id` column is REDCap's mandatory primary key.
 - Repeating instrument (`monthly_followup`) must be enabled in the target project's Project Setup after import.
 - Sample data in `examples/sample_data.csv` is fully synthetic (no real patients).
 
 # References
 
-- Ferreira VM. *HEARTLAND Protocol v3.3: Heart failure Evidence-based Access in Rural Treatment, Linking Advanced Network Delivery.* Cureus. 2026. DOI 10.5281/zenodo.18566403.
+- Ferreira VM. *HEARTLAND Protocol: A Tiered Clinical Implementation Toolkit for Primary Care-Led Heart Failure Management in Rural and Resource-Limited Settings.* Cureus. 2026;18(3):e104817. DOI 10.7759/cureus.104817.
 - Mitchell PH, Powell L, Blumenthal J, et al. *A short social support measure for patients recovering from myocardial infarction: the ENRICHD Social Support Inventory.* J Cardiopulm Rehabil. 2003;23(6):398-403.
 - Solomon SD, et al. *Finerenone in HFpEF* (FINEARTS-HF). N Engl J Med. 2024.
 - Mebazaa A, et al. *Safety, tolerability and efficacy of up-titration of guideline-directed medical therapies for acute heart failure* (STRONG-HF). Lancet. 2022;400:1938-52.
