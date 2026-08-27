@@ -44,6 +44,8 @@ Copyright 2026 Vicky Muller Ferreira. The author is the instrument creator and a
 
 Repository: https://github.com/vickymuller-md/heartland-redcap-template
 
-Template DOI: https://doi.org/10.5281/zenodo.19635000
+Template DOI (version 1.0.2): https://doi.org/10.5281/zenodo.22132635
+
+Template concept DOI (all versions): https://doi.org/10.5281/zenodo.19634999
 
 Protocol DOI: https://doi.org/10.5281/zenodo.19101219

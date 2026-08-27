@@ -1,7 +1,7 @@
 # HEARTLAND Protocol — REDCap Instrument Template
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19635000-blue)](https://doi.org/10.5281/zenodo.19635000)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19634999.svg)](https://doi.org/10.5281/zenodo.19634999)
 [![Protocol](https://img.shields.io/badge/Protocol-HEARTLAND%20v3.3-green)](https://doi.org/10.7759/cureus.104817)
 
 Pre-built REDCap data collection instrument for the **HEARTLAND Protocol** (Heart failure Evidence-based Access in Rural Treatment, Linking Advanced Network Delivery). Rural hospitals and research institutions with REDCap can import this template and immediately begin structured data collection for HEARTLAND Protocol validation studies — zero development cost.
@@ -102,7 +102,7 @@ Ferreira VM. HEARTLAND Protocol v3.3 - *Cureus*. 2026;18(3):e104817. DOI [10.775
 
 ```
 Ferreira VM. HEARTLAND Protocol REDCap Instrument Template, v1.0.2. 2026.
-  Zenodo. DOI: 10.5281/zenodo.19635000.
+  Zenodo. DOI: 10.5281/zenodo.22132635.
 ```
 
 Machine-readable citation: [`CITATION.cff`](CITATION.cff).

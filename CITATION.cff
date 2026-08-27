@@ -14,6 +14,9 @@ authors:
 repository-code: "https://github.com/vickymuller-md/heartland-redcap-template"
 url: "https://github.com/vickymuller-md/heartland-redcap-template"
 identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22132635"
+    description: "Version 1.0.2 archive"
   - type: swh
     value: "swh:1:snp:f3ff79845487b0c6ff853b772f14364f74849687"
     description: "Software Heritage snapshot archived 2026-08-25"

@@ -30,7 +30,9 @@ Muller Ferreira V. HEARTLAND Protocol: A Tiered Clinical Implementation Toolkit 
 
 Current protocol deposit: https://doi.org/10.5281/zenodo.19101219
 
-Template deposit: https://doi.org/10.5281/zenodo.19635000
+Template deposit (version 1.0.2): https://doi.org/10.5281/zenodo.22132635
+
+Template concept DOI (all versions): https://doi.org/10.5281/zenodo.19634999
 
 ## Validation and use boundary
 

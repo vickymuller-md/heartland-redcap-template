@@ -87,7 +87,7 @@ For protocol-level customization (e.g. a research-only subset of variables), see
 
 ```
 Ferreira VM. HEARTLAND Protocol REDCap Instrument Template, v1.0.2. 2026.
-  Zenodo. DOI: 10.5281/zenodo.19635000.
+  Zenodo. DOI: 10.5281/zenodo.22132635.
 ```
 
 ## Support
