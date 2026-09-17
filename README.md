@@ -73,6 +73,8 @@ redcap-template/
     └── generate_sample_data.py         <- regenerate synthetic data
 ```
 
+Note: `county_fips` values in `examples/sample_data.csv` are synthetic placeholders generated for demonstration, not real ANSI/FIPS county codes.
+
 ## Regenerate from source
 
 If you modify `heartland_data_dictionary.csv`, regenerate downstream artifacts:
@@ -106,6 +108,10 @@ Ferreira VM. HEARTLAND Protocol REDCap Instrument Template, v1.0.2. 2026.
 ```
 
 Machine-readable citation: [`CITATION.cff`](CITATION.cff).
+
+## Changelog
+
+- Validation ranges: `bl_lvef_pct` 5–80, `bl_enrichd_score` 8–40 (aligned with the ESSI instrument and the synthetic generator).
 
 ## Software preservation
 
