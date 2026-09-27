@@ -4,25 +4,41 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19634999.svg)](https://doi.org/10.5281/zenodo.19634999)
 [![Protocol](https://img.shields.io/badge/Protocol-HEARTLAND%20v3.3-green)](https://doi.org/10.7759/cureus.104817)
 
-Pre-built REDCap data collection instrument for the **HEARTLAND Protocol** (Heart failure Evidence-based Access in Rural Treatment, Linking Advanced Network Delivery). Rural hospitals and research institutions with REDCap can import this template and immediately begin structured data collection for HEARTLAND Protocol validation studies — zero development cost.
+Research instrument candidate for the **HEARTLAND Protocol** (Heart failure Evidence-based Access in Rural Treatment, Linking Advanced Network Delivery). Local generation tests do not establish clinical validity or compatibility with an institution's REDCap installation.
+
+## Local candidate hold — 24 September 2026
+
+The CSV-to-XML converter now preserves both validation bounds when both are supplied. The regression
+suite checks all 75 dictionary fields, including 28 with minimum and maximum, without changing the CSV.
+Run `python3 -m unittest discover -s tests -v` to reproduce those serialization checks.
+The converter also no longer invents `SignificantDigits=0` from a minimum bound. Numeric precision
+and values such as 4.5, 150.5 and 12.5 still require an actual import/export round-trip in the target instance.
+
+The checked-in XML/codebook/library packages have **not** been replaced by this narrow converter fix.
+The CSV's ESSI representation remains unresolved (8–40 bounds versus a 7–35 note); generated output
+copies that source and must not be treated as clinical adjudication. Do not distribute or import
+the candidate as a clinically approved instrument. No target REDCap import, calculation execution,
+branching behavior or cross-format equivalence has been verified in this update. Use only an
+authorized nonproduction synthetic test project once the candidate and import procedure are agreed.
 
 ## What's included
 
 - **Data Dictionary CSV** — 75 fields across 5 forms (enrollment, baseline, GDMT status, monthly follow-up, 12-month outcomes)
-- **REDCap XML instrument** — equivalent ODM-compatible instrument file
+- **REDCap XML instrument** — ODM-style alternative; range regeneration and target import/parity gates remain open
 - **Synthetic sample data** — 20 patients × 12-month follow-ups (no PHI)
 - **Codebook PDF** — human-readable variable reference
-- **Import guide** — step-by-step instructions for REDCap 14.x
+- **Import guide** — draft rehearsal instructions; version compatibility and menus require target-instance verification
 - **Suggested validation study protocol** — n=150 reference design, STROBE-aligned
 - **REDCap Shared Library package** — scored and unscored standalone HEARTLAND Risk Assessment instruments prepared to REDLOC coding guidance
 
-## Quickstart
+## Synthetic test preparation (import validation still required)
 
 1. Clone or download this repository.
 2. In your REDCap instance, create a new empty project.
-3. Upload `instruments/heartland_data_dictionary.csv` via *Data Dictionary → Upload*.
-4. Enable the repeating instrument `monthly_followup`.
-5. Optional — dry-run `examples/sample_data.csv` via the *Data Import Tool* to verify.
+3. Review the source/ESSI hold above before any test upload. Do not infer clinical approval from a successful upload.
+4. For an authorized import rehearsal, use `instruments/heartland_data_dictionary.csv` via *Data Dictionary → Upload* and preserve the import validation report.
+5. Verify the repeating instrument `monthly_followup` in the target instance.
+6. Dry-run `examples/sample_data.csv` in that isolated project; inspect errors and actual calculations. These steps have not been executed in this update.
 
 Full walkthrough: [`docs/import_guide.md`](docs/import_guide.md)
 
@@ -98,7 +114,7 @@ pandoc /tmp/codebook_ascii.md \
 
 ## Protocol reference
 
-Ferreira VM. HEARTLAND Protocol v3.3 - *Cureus*. 2026;18(3):e104817. DOI [10.7759/cureus.104817](https://doi.org/10.7759/cureus.104817); current protocol deposit [10.5281/zenodo.19101219](https://doi.org/10.5281/zenodo.19101219). Clinical definitions in this template match Table 1 (Risk Score) and Module 4 (GDMT).
+Ferreira VM. HEARTLAND Protocol v3.3 - *Cureus*. 2026;18(3):e104817. DOI [10.7759/cureus.104817](https://doi.org/10.7759/cureus.104817); protocol deposit [10.5281/zenodo.19101219](https://doi.org/10.5281/zenodo.19101219). Table 1 (Risk Score) and Module 4 (GDMT) are intended source references; the unresolved ESSI discrepancy prevents a blanket equivalence claim.
 
 ## Citation
 
@@ -111,7 +127,7 @@ Machine-readable citation: [`CITATION.cff`](CITATION.cff).
 
 ## Changelog
 
-- Validation ranges: `bl_lvef_pct` 5–80, `bl_enrichd_score` 8–40 (aligned with the ESSI instrument and the synthetic generator).
+- Historical CSV range change: `bl_lvef_pct` 5–80 and `bl_enrichd_score` 8–40. The ESSI range is recorded as source history, not confirmed instrument alignment; its conflicting 7–35 note still requires adjudication.
 
 ## Software preservation
 

@@ -2,9 +2,10 @@
 """Convert the HEARTLAND REDCap data dictionary CSV to a REDCap ODM-style XML instrument.
 
 REDCap's native XML export is CDISC ODM with REDCap extensions. For instrument-level
-distribution we emit a simplified, REDCap-compatible ODM document: MetaDataVersion
-containing FormDef, ItemGroupDef, ItemDef, and CodeListDef elements. This XML can be
-imported via "Upload instrument ZIP/XML" in REDCap 14.x.
+distribution we emit a simplified ODM-style document: MetaDataVersion containing
+FormDef, ItemGroupDef, ItemDef, and CodeList elements. Well-formedness and range
+serialization do not establish REDCap import compatibility. Validate the candidate
+in an authorized nonproduction REDCap project before describing it as importable.
 
 Usage:
     python3 scripts/csv_to_xml.py \\
@@ -151,20 +152,24 @@ def build_xml(rows: list[dict], *, version: str, study_name: str) -> ET.Element:
             attrs[f"{{{RC_NS}}}RequiredField"] = "y"
         if r["val_type"]:
             attrs[f"{{{RC_NS}}}TextValidationType"] = r["val_type"]
-        if r["val_min"]:
-            attrs["SignificantDigits"] = "0"  # purely cosmetic
+        # The dictionary supplies bounds, not a precision policy. Do not invent
+        # SignificantDigits from a minimum; the optional ODM attribute is omitted.
         item = ET.SubElement(mdv, f"{{{ODM_NS}}}ItemDef", attrs)
 
         q = ET.SubElement(item, f"{{{ODM_NS}}}Question")
         tr = ET.SubElement(q, f"{{{ODM_NS}}}TranslatedText", {"{http://www.w3.org/XML/1998/namespace}lang": "en"})
         tr.text = r["label"]
 
-        if r["val_min"] or r["val_max"]:
+        # ODM 1.3.2 permits multiple RangeCheck children. Bounds are independent:
+        # an existing minimum must never discard an existing maximum (or vice versa).
+        for comparator, bound in (("GE", r["val_min"]), ("LE", r["val_max"])):
+            if not bound:
+                continue
             rc = ET.SubElement(item, f"{{{ODM_NS}}}RangeCheck", {
-                "Comparator": "GE" if r["val_min"] else "LE",
+                "Comparator": comparator,
                 "SoftHard": "Soft",
             })
-            ET.SubElement(rc, f"{{{ODM_NS}}}CheckValue").text = r["val_min"] or r["val_max"]
+            ET.SubElement(rc, f"{{{ODM_NS}}}CheckValue").text = bound
 
         # Attach CodeListRef for radio/dropdown/checkbox/yesno
         if ftype in ("radio", "dropdown", "checkbox"):
